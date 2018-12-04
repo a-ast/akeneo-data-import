@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "aa/akeneo-amqp-publisher": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -20,5 +21,6 @@
         "psr-4": {
             "spec\\Aa\\Akeneo\\DataImport\\": "spec/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
