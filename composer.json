@@ -10,6 +10,7 @@
     ],
     "require": {
         "php": ">=7.1",
+        "symfony/flex": "^1.0",
         "aa/akeneo-amqp-publisher": "dev-master"
     },
     "autoload": {
