@@ -1,0 +1,24 @@
+{
+    "name": "aa/akeneo-data-import",
+    "description": "Application for data import to Akeneo PIM",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Andrey Astakhov",
+            "email": "andrey.astakhov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aa\\Akeneo\\DataImport\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\Aa\\Akeneo\\DataImport\\": "spec/"
+        }
+    }
+}
