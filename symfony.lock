@@ -1,4 +1,70 @@
 {
+    "aa/akeneo-fake-data-provider": {
+        "version": "dev-master"
+    },
+    "akeneo/api-php-client": {
+        "version": "dev-master"
+    },
+    "clue/stream-filter": {
+        "version": "v1.4.0"
+    },
+    "guzzlehttp/guzzle": {
+        "version": "6.3-dev"
+    },
+    "guzzlehttp/promises": {
+        "version": "1.4-dev"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.5-dev"
+    },
+    "php-http/discovery": {
+        "version": "1.5-dev"
+    },
+    "php-http/guzzle6-adapter": {
+        "version": "v1.1.1"
+    },
+    "php-http/httplug": {
+        "version": "v1.1.0"
+    },
+    "php-http/message": {
+        "version": "1.7.2"
+    },
+    "php-http/message-factory": {
+        "version": "1.0-dev"
+    },
+    "php-http/multipart-stream-builder": {
+        "version": "1.1-dev"
+    },
+    "php-http/promise": {
+        "version": "1.0-dev"
+    },
+    "psr/container": {
+        "version": "1.0.x-dev"
+    },
+    "psr/http-message": {
+        "version": "1.0.x-dev"
+    },
+    "ralouphie/getallheaders": {
+        "version": "2.0.5"
+    },
+    "symfony/config": {
+        "version": "4.3-dev"
+    },
+    "symfony/debug": {
+        "version": "4.3-dev"
+    },
+    "symfony/dependency-injection": {
+        "version": "4.3-dev"
+    },
+    "symfony/event-dispatcher": {
+        "version": "4.3-dev"
+    },
+    "symfony/filesystem": {
+        "version": "4.3-dev"
+    },
+    "symfony/finder": {
+        "version": "4.3-dev"
+    },
     "symfony/flex": {
         "version": "1.0",
         "recipe": {
@@ -6,6 +72,33 @@
             "branch": "master",
             "version": "1.0",
             "ref": "5f8a51c0fad684396f6b6c0fd770e043439cb632"
+        }
+    },
+    "symfony/framework-bundle": {
+        "version": "4.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.2",
+            "ref": "f0e22c9457f6745bee80ade92c0ec2946bec9e2d"
+        }
+    },
+    "symfony/http-foundation": {
+        "version": "4.3-dev"
+    },
+    "symfony/http-kernel": {
+        "version": "4.3-dev"
+    },
+    "symfony/polyfill-mbstring": {
+        "version": "v1.10.0"
+    },
+    "symfony/routing": {
+        "version": "4.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.2",
+            "ref": "5374e24d508ba8fd6ba9eb15170255fdb778316a"
         }
     }
 }

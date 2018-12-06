@@ -10,8 +10,10 @@
     ],
     "require": {
         "php": ">=7.1",
-        "symfony/flex": "^1.0",
-        "aa/akeneo-amqp-publisher": "dev-master"
+        "symfony/flex": "^1.1@dev",
+        "aa/akeneo-amqp-publisher": "dev-master",
+        "aa/akeneo-fake-data-provider": "dev-master",
+        "symfony/framework-bundle": "^4.3@dev"
     },
     "autoload": {
         "psr-4": {
@@ -23,5 +25,11 @@
             "spec\\Aa\\Akeneo\\DataImport\\": "spec/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
+    }
 }
