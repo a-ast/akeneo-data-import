@@ -1,0 +1,10 @@
+framework:
+    messenger:
+        transports:
+            amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+
+        routing:
+            'Aa\Akeneo\Entities\Model\PimEntityCollection': amqp
+
+        serializer:
+            format: json_patch
