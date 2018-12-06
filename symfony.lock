@@ -50,10 +50,22 @@
     "symfony/config": {
         "version": "4.3-dev"
     },
+    "symfony/console": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "f3a28efb32f20b8740fd763651cabd780bce43da"
+        }
+    },
     "symfony/debug": {
         "version": "4.3-dev"
     },
     "symfony/dependency-injection": {
+        "version": "4.3-dev"
+    },
+    "symfony/dotenv": {
         "version": "4.3-dev"
     },
     "symfony/event-dispatcher": {
@@ -100,5 +112,8 @@
             "version": "4.2",
             "ref": "5374e24d508ba8fd6ba9eb15170255fdb778316a"
         }
+    },
+    "symfony/yaml": {
+        "version": "4.3-dev"
     }
 }
