@@ -11,8 +11,9 @@
     "require": {
         "php": ">=7.1",
         "symfony/flex": "^1.1@dev",
-        "aa/akeneo-amqp-publisher": "dev-master",
-        "aa/akeneo-fake-data-provider": "dev-master",
+        "aa/akeneo-import-commands": "dev-master",
+        "aa/akeneo-import": "dev-master",
+        "aa/akeneo-fake-product-provider": "dev-master",
         "symfony/framework-bundle": "^4.3@dev",
         "symfony/console": "^4.3@dev",
         "symfony/dotenv": "^4.3@dev",
