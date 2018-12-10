@@ -1,0 +1,15 @@
+services:
+
+#    Aa\Akeneo\AmqpPublisher\Serializer\PimEntityCollectionEncoder:
+#        autowire: true
+
+    Aa\Akeneo\Import\Handler\CommandListHandler:
+        tags:
+            - { name: 'messenger.message_handler' }
+
+    App\Command\TestPublishCommand:
+        arguments:
+            - '@message_bus'
+        tags: ['console.command']
+
+

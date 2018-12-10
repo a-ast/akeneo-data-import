@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "9cb8a8a74744bcdac33ecbb014aaed05c7210c39"
+                "reference": "ddffdfe10fe31d01902a03f23532ee3d0ef64c74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/9cb8a8a74744bcdac33ecbb014aaed05c7210c39",
-                "reference": "9cb8a8a74744bcdac33ecbb014aaed05c7210c39",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/ddffdfe10fe31d01902a03f23532ee3d0ef64c74",
+                "reference": "ddffdfe10fe31d01902a03f23532ee3d0ef64c74",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Aa\\Akeneo\\AmqpPublisher\\": "src/"
+                    "Aa\\Akeneo\\Import\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -75,7 +75,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2018-12-10T21:09:12+00:00"
+            "time": "2018-12-10T22:12:03+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "6c13fa2406a4956d31e7301953cc36667f6e35b2"
+                "reference": "1ebe48b73d77fa3fbc1d760b9e55177d73d94e07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/6c13fa2406a4956d31e7301953cc36667f6e35b2",
-                "reference": "6c13fa2406a4956d31e7301953cc36667f6e35b2",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/1ebe48b73d77fa3fbc1d760b9e55177d73d94e07",
+                "reference": "1ebe48b73d77fa3fbc1d760b9e55177d73d94e07",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Aa\\Akeneo\\Entities\\": "src/"
+                    "Aa\\Akeneo\\ImportCommands\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -108,7 +108,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2018-12-10T20:29:10+00:00"
+            "time": "2018-12-10T21:57:25+00:00"
         },
         {
             "name": "akeneo/api-php-client",
