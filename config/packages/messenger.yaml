@@ -1,10 +1,44 @@
 framework:
     messenger:
+
+        default_bus: messenger.bus.one
+
+        buses:
+            messenger.bus.one: ~
+            messenger.bus.one_more: ~
+
         transports:
             amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
 
-        routing:
-            'Aa\Akeneo\Entities\Model\PimEntityCollection': amqp
+#        routing:
+#            'App\MyMessage': amqp
 
         serializer:
             format: json_patch
+
+services:
+
+    Aa\Akeneo\AmqpPublisher\Serializer\PimEntityCollectionEncoder:
+        autowire: true
+
+#    messenger.bus.one_more:
+#        class: 'Symfony\Component\Messenger\MessageBus'
+#        tags:
+#            - 'messenger.bus'
+
+
+    App\Handler\DefaultHandler:
+        tags:
+            - { name: 'messenger.message_handler' }
+
+    App\Handler\HandlerOnlyForOneMoreBus:
+        tags:
+            - { name: 'messenger.message_handler', bus: 'messenger.bus.one_more' }
+
+    App\Command\TestPublishCommand:
+        arguments:
+            - '@messenger.bus.one_more'
+            - '@messenger.senders_locator'
+        tags: ['console.command']
+
+
