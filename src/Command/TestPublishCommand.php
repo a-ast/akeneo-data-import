@@ -2,19 +2,15 @@
 
 namespace App\Command;
 
-use Aa\Akeneo\ImportCommands\CommandList;
-use Aa\Akeneo\ImportCommands\Product\UpdateProduct;
-use DateTimeImmutable;
+use Aa\AkeneoImport\ImportCommands\Control\FinishImport;
+use Aa\AkeneoImport\ImportCommands\Product\UpdateProduct;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
-use Symfony\Component\Messenger\Stamp\SentStamp;
 
 class TestPublishCommand extends Command
 {
-
     /**
      * @var MessageBusInterface
      */
@@ -36,16 +32,12 @@ class TestPublishCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $product = new UpdateProduct('test-12345'.((string)random_int(1,1000)));
+        for ($i = 1; $i <= 22; $i++) {
 
-        $product->addValue('description', 'huawei', 'en_US', 'ecommerce');
+            $product = new UpdateProduct(sprintf('test-%d', $i));
+            $this->bus->dispatch($product);
+        }
 
-        $collection = new CommandList();
-        $collection->add($product);
-        $collection->add($product);
-
-        $envelope = new Envelope($collection);
-        // NOT ONE BY ONE, BUT 100
-        $this->bus->dispatch($envelope->with(new SentStamp(UpdateProduct::class)));
+        $this->bus->dispatch(new FinishImport());
     }
 }

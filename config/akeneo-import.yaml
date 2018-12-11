@@ -15,6 +15,13 @@ services:
             - '@aa.api.client'
             - '@serializer'
 
+    Aa\Akeneo\Import\Handler\AccumulateCommandHandler:
+        arguments:
+            - '@message_bus'
+            - 10
+        tags:
+            - { name: 'messenger.message_handler' }
+
     Aa\Akeneo\Import\Handler\CommandListHandler:
         arguments:
             - '@aa.akeneo_import.handler.api_batch_update'
