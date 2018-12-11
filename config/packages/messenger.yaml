@@ -4,8 +4,8 @@ framework:
         transports:
             amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
 
-#        routing:
-#            'App\MyMessage': amqp
+        routing:
+            'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
 
 #        serializer:
 #            format: json_patch
