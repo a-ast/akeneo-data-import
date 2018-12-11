@@ -1,9 +1,12 @@
 # TODO
 
+## Akeneo Import Tool
+
+
 ## Akeneo Import
 
 1. Implement CommandHandlerInterface (create one default or extract them?)
-
+1. Importer 
 
 ## Import Commands
 

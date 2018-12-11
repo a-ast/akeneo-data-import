@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "386cd61af84ea3f3a6998dbe8f2ba3e1",
+    "content-hash": "3df62c31df81b8c718d0c983228571b9",
     "packages": [
         {
             "name": "aa/akeneo-fake-product-provider",
@@ -76,6 +76,42 @@
             ],
             "description": "Library for product import to Akeneo PIM",
             "time": "2018-12-10T22:12:03+00:00"
+        },
+        {
+            "name": "aa/akeneo-import-api-command-handler",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a-ast/akeneo-import-api-command-handler.git",
+                "reference": "aa9531612aba94dc6c8da3a2d5b4cc267612d2ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/aa9531612aba94dc6c8da3a2d5b4cc267612d2ce",
+                "reference": "aa9531612aba94dc6c8da3a2d5b4cc267612d2ce",
+                "shasum": ""
+            },
+            "require": {
+                "aa/akeneo-import-commands": "dev-master",
+                "akeneo/api-php-client": "dev-master",
+                "php": ">=7.1",
+                "php-http/guzzle6-adapter": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aa\\AkeneoImport\\CommandHandler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Andrey Astakhov",
+                    "email": "andrey.astakhov@gmail.com"
+                }
+            ],
+            "description": "akeneo-import-api-command-handler",
+            "time": "2018-12-11T10:17:06+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -3086,7 +3122,8 @@
         "symfony/framework-bundle": 20,
         "symfony/console": 20,
         "symfony/dotenv": 20,
-        "symfony/yaml": 20
+        "symfony/yaml": 20,
+        "aa/akeneo-import-api-command-handler": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

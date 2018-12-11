@@ -8,6 +8,9 @@
     "aa/akeneo-import": {
         "version": "dev-master"
     },
+    "aa/akeneo-import-api-command-handler": {
+        "version": "dev-master"
+    },
     "aa/akeneo-import-commands": {
         "version": "dev-master"
     },
