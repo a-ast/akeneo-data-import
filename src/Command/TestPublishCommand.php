@@ -36,9 +36,9 @@ class TestPublishCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $product = new UpdateProduct('test-12345');
+        $product = new UpdateProduct('test-12345'.((string)random_int(1,1000)));
 
-        $product->addValue('issued', new DateTimeImmutable());
+        $product->addValue('description', 'huawei', 'en_US', 'ecommerce');
 
         $collection = new CommandList();
         $collection->add($product);

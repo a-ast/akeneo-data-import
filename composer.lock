@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "ddffdfe10fe31d01902a03f23532ee3d0ef64c74"
+                "reference": "181fdcf8df67f3d328dc8d218c7d5887b8d0e148"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/ddffdfe10fe31d01902a03f23532ee3d0ef64c74",
-                "reference": "ddffdfe10fe31d01902a03f23532ee3d0ef64c74",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/181fdcf8df67f3d328dc8d218c7d5887b8d0e148",
+                "reference": "181fdcf8df67f3d328dc8d218c7d5887b8d0e148",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2018-12-10T22:12:03+00:00"
+            "time": "2018-12-10T22:41:53+00:00"
         },
         {
             "name": "aa/akeneo-import-api-command-handler",
@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-api-command-handler.git",
-                "reference": "aa9531612aba94dc6c8da3a2d5b4cc267612d2ce"
+                "reference": "7e1964a75046c533aae90e3968269a82b00d853d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/aa9531612aba94dc6c8da3a2d5b4cc267612d2ce",
-                "reference": "aa9531612aba94dc6c8da3a2d5b4cc267612d2ce",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/7e1964a75046c533aae90e3968269a82b00d853d",
+                "reference": "7e1964a75046c533aae90e3968269a82b00d853d",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,7 @@
                 }
             ],
             "description": "akeneo-import-api-command-handler",
-            "time": "2018-12-11T10:17:06+00:00"
+            "time": "2018-12-11T10:33:12+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -119,12 +119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "1ebe48b73d77fa3fbc1d760b9e55177d73d94e07"
+                "reference": "32936c25dc056024a128fb28c7ceaad601c74a64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/1ebe48b73d77fa3fbc1d760b9e55177d73d94e07",
-                "reference": "1ebe48b73d77fa3fbc1d760b9e55177d73d94e07",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/32936c25dc056024a128fb28c7ceaad601c74a64",
+                "reference": "32936c25dc056024a128fb28c7ceaad601c74a64",
                 "shasum": ""
             },
             "require": {
@@ -144,7 +144,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2018-12-10T21:57:25+00:00"
+            "time": "2018-12-11T10:22:28+00:00"
         },
         {
             "name": "akeneo/api-php-client",
@@ -2068,12 +2068,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "955774ecf07b10230bb5b44e150ba078b45f68fa"
+                "reference": "10990ac976a818be5992859f6c34724814f7baef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/955774ecf07b10230bb5b44e150ba078b45f68fa",
-                "reference": "955774ecf07b10230bb5b44e150ba078b45f68fa",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/10990ac976a818be5992859f6c34724814f7baef",
+                "reference": "10990ac976a818be5992859f6c34724814f7baef",
                 "shasum": ""
             },
             "require": {
@@ -2082,7 +2082,7 @@
             },
             "require-dev": {
                 "composer/composer": "^1.0.2",
-                "symfony/phpunit-bridge": "^3.2.8"
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
             },
             "type": "composer-plugin",
             "extra": {
@@ -2107,7 +2107,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2018-11-15T06:11:38+00:00"
+            "time": "2018-12-11T07:30:50+00:00"
         },
         {
             "name": "symfony/framework-bundle",

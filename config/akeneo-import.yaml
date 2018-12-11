@@ -3,13 +3,37 @@ services:
 #    Aa\Akeneo\AmqpPublisher\Serializer\PimEntityCollectionEncoder:
 #        autowire: true
 
-    Aa\Akeneo\Import\Handler\CommandListHandler:
-        tags:
-            - { name: 'messenger.message_handler' }
 
     App\Command\TestPublishCommand:
         arguments:
             - '@message_bus'
         tags: ['console.command']
 
+    aa.akeneo_import.handler.api_batch_update:
+        class: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+        arguments:
+            - '@aa.api.client'
+            - '@serializer'
 
+    Aa\Akeneo\Import\Handler\CommandListHandler:
+        arguments:
+            - '@aa.akeneo_import.handler.api_batch_update'
+        tags:
+            - { name: 'messenger.message_handler' }
+
+
+    aa.api.client_builder:
+        class: Akeneo\Pim\ApiClient\AkeneoPimClientBuilder
+        arguments:
+            - '%env(AKENEO_API_HOST)%'
+
+    aa.api.client:
+        class: Akeneo\Pim\ApiClient\AkeneoPimClientInterface
+        factory: 'aa.api.client_builder:buildAuthenticatedByPassword'
+        arguments:
+            - '%env(AKENEO_API_CLIENT_ID)%'
+            - '%env(AKENEO_API_SECRET)%'
+            - '%env(AKENEO_API_USER)%'
+            - '%env(AKENEO_API_PASSWORD)%'
+
+    Akeneo\Pim\ApiClient\AkeneoPimClientInterface: '@aa.api.client'
