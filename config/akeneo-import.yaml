@@ -45,7 +45,7 @@ services:
 
     Akeneo\Pim\ApiClient\AkeneoPimClientInterface: '@aa.api.client'
 
-    Aa\AkeneoImport\Import\Serializer\CommandListNormalizer:
+    Aa\Akeneo\Import\Serializer\CommandListNormalizer:
         calls:
             - ['setDenormalizer', ['@serializer']]
         tags:

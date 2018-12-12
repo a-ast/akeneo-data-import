@@ -35,6 +35,10 @@ class TestPublishCommand extends Command
         for ($i = 1; $i <= 22; $i++) {
 
             $product = new UpdateProduct(sprintf('test-%d', $i));
+            $product->setFamily('clothing');
+            $product->setEnabled(true);
+            $product->addValue('name', null);
+            $product->addValue('color', 'red');
             $this->bus->dispatch($product);
         }
 
