@@ -15,14 +15,14 @@ services:
             - '@aa.api.client'
             - '@serializer'
 
-    Aa\Akeneo\Import\Handler\AccumulateCommandHandler:
+    Aa\AkeneoImport\MessageHandler\AccumulateCommandHandler:
         arguments:
             - '@message_bus'
             - 10
         tags:
             - { name: 'messenger.message_handler' }
 
-    Aa\Akeneo\Import\Handler\CommandListHandler:
+    Aa\AkeneoImport\MessageHandler\CommandListHandler:
         arguments:
             - '@aa.akeneo_import.handler.api_batch_update'
         tags:
@@ -45,8 +45,9 @@ services:
 
     Akeneo\Pim\ApiClient\AkeneoPimClientInterface: '@aa.api.client'
 
-    Aa\Akeneo\Import\Serializer\CommandListNormalizer:
+    Aa\AkeneoImport\Serializer\CommandListNormalizer:
         calls:
             - ['setDenormalizer', ['@serializer']]
+            - ['setNormalizer', ['@serializer']]
         tags:
             - { name: 'serializer.normalizer' }

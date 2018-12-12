@@ -39,6 +39,7 @@ class TestPublishCommand extends Command
             $product->setEnabled(true);
             $product->addValue('name', null);
             $product->addValue('color', 'red');
+
             $this->bus->dispatch($product);
         }
 
