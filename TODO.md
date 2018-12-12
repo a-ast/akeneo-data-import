@@ -5,10 +5,8 @@
 
 ## Akeneo Import
 
-1. Implement (De)normalization of CommandList
+1. Implement (De)normalization using class info (from command list).
 1. Implement reject/requeue in the MessageHandler 
-1. Check if it is possible to use Middleware for routing/dispatching commands to internal queues.
-
 
 ## Import Commands
 

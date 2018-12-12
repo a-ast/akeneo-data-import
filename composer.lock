@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-fake-product-provider.git",
-                "reference": "1105a8d998e526950d8153fd7c55f752c01ba04c"
+                "reference": "dc1fedbaac82fb7378a93ad5454d3a98f52115fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-fake-product-provider/zipball/1105a8d998e526950d8153fd7c55f752c01ba04c",
-                "reference": "1105a8d998e526950d8153fd7c55f752c01ba04c",
+                "url": "https://api.github.com/repos/a-ast/akeneo-fake-product-provider/zipball/dc1fedbaac82fb7378a93ad5454d3a98f52115fb",
+                "reference": "dc1fedbaac82fb7378a93ad5454d3a98f52115fb",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Aa\\Akeneo\\DataProvider\\": "src/"
+                    "Aa\\AkeneoImport\\Provider\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -40,7 +40,7 @@
                 }
             ],
             "description": "Data provider of fake data for import to Akeneo",
-            "time": "2018-12-10T21:09:12+00:00"
+            "time": "2018-12-12T11:27:54+00:00"
         },
         {
             "name": "aa/akeneo-import",
@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "3b05e5652d85897d1f310d5e64175a26ddf74a22"
+                "reference": "abf04f2983ec853f069910378c87b027dd67fe7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/3b05e5652d85897d1f310d5e64175a26ddf74a22",
-                "reference": "3b05e5652d85897d1f310d5e64175a26ddf74a22",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/abf04f2983ec853f069910378c87b027dd67fe7c",
+                "reference": "abf04f2983ec853f069910378c87b027dd67fe7c",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Aa\\Akeneo\\Import\\": "src/"
+                    "Aa\\AkeneoImport\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -75,7 +75,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2018-12-11T16:35:31+00:00"
+            "time": "2018-12-12T11:27:54+00:00"
         },
         {
             "name": "aa/akeneo-import-api-command-handler",
@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-api-command-handler.git",
-                "reference": "b185ddb39ee083bbc14463425eab044a921fe7c3"
+                "reference": "06d913f319b2397c084e48b2ca5d70b0a81973b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/b185ddb39ee083bbc14463425eab044a921fe7c3",
-                "reference": "b185ddb39ee083bbc14463425eab044a921fe7c3",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/06d913f319b2397c084e48b2ca5d70b0a81973b3",
+                "reference": "06d913f319b2397c084e48b2ca5d70b0a81973b3",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                 }
             ],
             "description": "akeneo-import-api-command-handler",
-            "time": "2018-12-11T14:45:06+00:00"
+            "time": "2018-12-11T20:59:20+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -120,12 +120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "d64c65c572bb839e44c9b576305f61e0acd6a39b"
+                "reference": "0ad02c1ab1711b28497085f80e960d9df42e5d26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/d64c65c572bb839e44c9b576305f61e0acd6a39b",
-                "reference": "d64c65c572bb839e44c9b576305f61e0acd6a39b",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/0ad02c1ab1711b28497085f80e960d9df42e5d26",
+                "reference": "0ad02c1ab1711b28497085f80e960d9df42e5d26",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2018-12-11T16:34:26+00:00"
+            "time": "2018-12-12T11:02:08+00:00"
         },
         {
             "name": "akeneo/api-php-client",
@@ -1371,16 +1371,16 @@
         },
         {
             "name": "ralouphie/getallheaders",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ralouphie/getallheaders.git",
-                "reference": "cd148e0cf8789def229b1bc24be0cb0eeb24301c"
+                "reference": "beb49b96960f0cbf17e7fbcaaddc8eb434e126eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/cd148e0cf8789def229b1bc24be0cb0eeb24301c",
-                "reference": "cd148e0cf8789def229b1bc24be0cb0eeb24301c",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/beb49b96960f0cbf17e7fbcaaddc8eb434e126eb",
+                "reference": "beb49b96960f0cbf17e7fbcaaddc8eb434e126eb",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1407,7 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
-            "time": "2018-12-10T04:22:02+00:00"
+            "time": "2018-12-11T21:53:24+00:00"
         },
         {
             "name": "symfony/amqp-pack",
