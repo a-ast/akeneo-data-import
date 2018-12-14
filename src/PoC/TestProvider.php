@@ -22,8 +22,9 @@ class TestProvider implements CommandProviderInterface
             $product
                 ->setFamily('clothing')
                 ->setEnabled(false)
-//                ->addValue('name', 'Product '. $identifier)
-//                ->addValue('color', 'red')
+                ->addValue('name', 'Product '. $identifier)
+                ->addValue('color', null)
+                ->setCategories(['master_men_pants_shorts'])
             ;
 
             yield $product;

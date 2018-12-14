@@ -4,8 +4,8 @@ framework:
         transports:
             amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
 
-        routing:
-            'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
+#        routing:
+#            'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
 
 #        serializer:
 #            context:
