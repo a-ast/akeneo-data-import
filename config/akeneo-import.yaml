@@ -1,10 +1,5 @@
 services:
 
-    App\Command\TestPublishCommand:
-        arguments:
-            - '@message_bus'
-        tags: ['console.command']
-
     aa.akeneo_import.handler.api_batch_update:
         class: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
         arguments:
@@ -53,3 +48,14 @@ services:
             - ['setNormalizer', ['@serializer']]
         tags:
             - { name: 'serializer.normalizer' }
+
+
+    Aa\AkeneoImport\Import\Importer:
+        arguments:
+            - '@App\PoC\TestProvider'
+            - '@message_bus'
+
+    App\Command\ImportCommand:
+        arguments:
+            - '@Aa\AkeneoImport\Import\Importer'
+        tags: ['console.command']
