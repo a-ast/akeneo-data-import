@@ -1,9 +1,5 @@
 services:
 
-#    Aa\Akeneo\AmqpPublisher\Serializer\PimEntityCollectionEncoder:
-#        autowire: true
-
-
     App\Command\TestPublishCommand:
         arguments:
             - '@message_bus'
@@ -48,6 +44,12 @@ services:
     Aa\AkeneoImport\Serializer\CommandListNormalizer:
         calls:
             - ['setDenormalizer', ['@serializer']]
+            - ['setNormalizer', ['@serializer']]
+        tags:
+            - { name: 'serializer.normalizer' }
+
+    Aa\AkeneoImport\Serializer\CommandNormalizer:
+        calls:
             - ['setNormalizer', ['@serializer']]
         tags:
             - { name: 'serializer.normalizer' }

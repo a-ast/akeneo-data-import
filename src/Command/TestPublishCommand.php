@@ -32,12 +32,20 @@ class TestPublishCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        for ($i = 1; $i <= 22; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
 
-            $product = new UpdateProduct(sprintf('test-%d', $i));
-            $product->setFamily('clothing');
+            $identifier = sprintf('test-%d', $i);
+            $product = new UpdateProduct($identifier);
+
+            // how to get field names? constant?
+            // no types - all mixed
+//
+//            new UpdateProductField($identifier, 'family', 'clothing');
+//            new UpdateProductField($identifier, 'enabled', true);
+
+//            $product->setFamily('clothing');
             $product->setEnabled(true);
-            $product->addValue('name', null);
+//            $product->addValue('name', 'Product '. $identifier);
             $product->addValue('color', 'red');
 
             $this->bus->dispatch($product);

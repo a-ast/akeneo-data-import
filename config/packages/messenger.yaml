@@ -7,10 +7,9 @@ framework:
         routing:
             'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
 
-        serializer:
-#            format: json_patch
-            context:
-                skip_null_values: true
+#        serializer:
+#            context:
+#                skip_null_values: true
 
 # Default middleware handlers
 # Symfony\Component\Messenger\Middleware\LoggingMiddleware
