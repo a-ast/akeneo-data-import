@@ -1,9 +1,9 @@
 framework:
-    messenger:
-
-        transports:
-            amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
-
+#    messenger:
+#
+#        transports:
+#            amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+#
 #        routing:
 #            'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
 

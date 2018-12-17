@@ -1,24 +1,11 @@
 services:
 
-    aa.akeneo_import.handler.api_batch_update:
-        class: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+    ### API batch handler
+
+    Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
         arguments:
             - '@aa.api.client'
             - '@serializer'
-
-    Aa\AkeneoImport\MessageHandler\AccumulateCommandHandler:
-        arguments:
-            - '@message_bus'
-            - 10
-        tags:
-            - { name: 'messenger.message_handler' }
-
-    Aa\AkeneoImport\MessageHandler\CommandListHandler:
-        arguments:
-            - '@aa.akeneo_import.handler.api_batch_update'
-        tags:
-            - { name: 'messenger.message_handler' }
-
 
     aa.api.client_builder:
         class: Akeneo\Pim\ApiClient\AkeneoPimClientBuilder
@@ -36,6 +23,9 @@ services:
 
     Akeneo\Pim\ApiClient\AkeneoPimClientInterface: '@aa.api.client'
 
+
+    ## Serializer
+
     Aa\AkeneoImport\Serializer\CommandListNormalizer:
         calls:
             - ['setDenormalizer', ['@serializer']]
@@ -50,12 +40,25 @@ services:
             - { name: 'serializer.normalizer' }
 
 
+    ## App
+
+    Aa\AkeneoImport\CommandBus\AsyncCommandListHandlerFactory:
+        arguments:
+          - '%env(MESSENGER_TRANSPORT_DSN)%'
+
+    Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler:
+        factory: 'Aa\AkeneoImport\CommandBus\AsyncCommandListHandlerFactory:createHandler'
+
+    Aa\AkeneoImport\CommandBus\CommandBusFactory:
+
     Aa\AkeneoImport\Import\Importer:
         arguments:
             - '@App\PoC\TestProvider'
-            - '@message_bus'
+            - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
 
     App\Command\ImportCommand:
         arguments:
             - '@Aa\AkeneoImport\Import\Importer'
+#            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+            - '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
         tags: ['console.command']
