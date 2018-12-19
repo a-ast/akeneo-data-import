@@ -3,10 +3,13 @@
 namespace App\Command;
 
 use Aa\AkeneoImport\Import\Importer;
-use Aa\AkeneoImport\ImportCommands\CommandListHandlerInterface;
+use Aa\AkeneoImport\ImportCommands\CommandProviderInterface;
+use Aa\AkeneoImport\ImportCommands\Exception\CommandHandlerException;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 
 class ImportCommand extends Command
@@ -17,27 +20,50 @@ class ImportCommand extends Command
     private $importer;
 
     /**
-     * @var \Aa\AkeneoImport\ImportCommands\CommandListHandlerInterface
+     * @var \Aa\AkeneoImport\ImportCommands\CommandListHandlerInterface[]
      */
-    private $handler;
+    private $handlers;
 
-    public function __construct(Importer $importer, CommandListHandlerInterface $handler)
-    {
+    /**
+     * @var \Aa\AkeneoImport\ImportCommands\CommandProviderInterface
+     */
+    private $provider;
+
+    public function __construct(Importer $importer,
+        CommandProviderInterface $provider,
+        array $handlers
+    ) {
         parent::__construct();
 
         $this->importer = $importer;
-        $this->handler = $handler;
+        $this->provider = $provider;
+        $this->handlers = $handlers;
     }
 
     protected function configure()
     {
         $this
             ->setName('aa:akeneo-import:import')
-            ->setDescription('Import products');
+            ->setDescription('Import products')
+            ->addArgument('handler-alias', InputArgument::REQUIRED, 'Alias of a command list handler.')
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->importer->import($this->handler);
+        $handler = $this->handlers[$input->getArgument('handler-alias')];
+
+        try {
+            $this->importer->import($this->provider, $handler);
+        } catch (CommandHandlerException $e) {
+
+            $style = new SymfonyStyle($input, $output);
+
+            $style->error($e->getMessage());
+            foreach ($e->getErrors() as $field => $error) {
+                $style->error(sprintf('%s: %s', $field, $error));
+            }
+
+        }
     }
 }

@@ -53,12 +53,13 @@ services:
 
     Aa\AkeneoImport\Import\Importer:
         arguments:
-            - '@App\PoC\TestProvider'
             - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
 
     App\Command\ImportCommand:
         arguments:
             - '@Aa\AkeneoImport\Import\Importer'
-#            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
-            - '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
+            - '@App\PoC\TestProvider'
+            -
+                api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+                amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
         tags: ['console.command']
