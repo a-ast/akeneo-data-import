@@ -1,5 +1,13 @@
 services:
 
+    ### Debug
+    Aa\AkeneoImport\MessageHandler\CommandListMessageHandler:
+        arguments:
+            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+        tags:
+            - messenger.message_handler
+
+
     ### API batch handler
 
     Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
@@ -42,18 +50,34 @@ services:
 
     ## App
 
-    Aa\AkeneoImport\CommandBus\AsyncCommandListHandlerFactory:
+    Aa\AkeneoImport\CommandBus\TransportFactory:
         arguments:
           - '%env(MESSENGER_TRANSPORT_DSN)%'
 
+    aa.command_bus.transport.sender:
+        class: 'Symfony\Component\Messenger\Transport\AmqpExt\AmqpSender'
+        factory: 'Aa\AkeneoImport\CommandBus\TransportFactory:createSender'
+
+    aa.command_bus.transport.receiver:
+        class: 'Symfony\Component\Messenger\Transport\AmqpExt\AmqpReceiver'
+        factory: 'Aa\AkeneoImport\CommandBus\TransportFactory:createReceiver'
+
+
     Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler:
-        factory: 'Aa\AkeneoImport\CommandBus\AsyncCommandListHandlerFactory:createHandler'
+        arguments:
+          - '@aa.command_bus.transport.sender'
 
     Aa\AkeneoImport\CommandBus\CommandBusFactory:
 
     Aa\AkeneoImport\Import\Importer:
         arguments:
             - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
+
+    Aa\AkeneoImport\CommandBus\Consumer:
+        arguments:
+            - '@aa.command_bus.transport.receiver'
+            - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
+
 
     App\Command\ImportCommand:
         arguments:
@@ -62,4 +86,11 @@ services:
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
+        tags: ['console.command']
+
+    App\Command\ConsumeCommand:
+        arguments:
+            - '@Aa\AkeneoImport\CommandBus\Consumer'
+            -
+                api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
         tags: ['console.command']
