@@ -32,6 +32,21 @@
     "doctrine/lexer": {
         "version": "1.0.x-dev"
     },
+    "enqueue/amqp-ext": {
+        "version": "0.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.8",
+            "ref": "b1c9aa7b70ea9be85683cf2af5c10472240bb109"
+        }
+    },
+    "enqueue/amqp-tools": {
+        "version": "0.9.x-dev"
+    },
+    "enqueue/dsn": {
+        "version": "0.9.x-dev"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3-dev"
     },
@@ -85,6 +100,12 @@
     },
     "psr/simple-cache": {
         "version": "1.0.x-dev"
+    },
+    "queue-interop/amqp-interop": {
+        "version": "0.8.x-dev"
+    },
+    "queue-interop/queue-interop": {
+        "version": "0.8.0"
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"

@@ -1,12 +1,12 @@
 services:
 
     ### Debug
-    Aa\AkeneoImport\MessageHandler\CommandListMessageHandler:
-        arguments:
-            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
-        tags:
-            - messenger.message_handler
-
+#    Aa\AkeneoImport\MessageHandler\CommandListMessageHandler:
+#        arguments:
+#            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+#        tags:
+#            - messenger.message_handler
+#
 
     ### API batch handler
 
@@ -50,22 +50,20 @@ services:
 
     ## App
 
-    Aa\AkeneoImport\CommandBus\TransportFactory:
+    Aa\AkeneoImport\CommandBus\Transport\TransportFactory:
         arguments:
-          - '%env(MESSENGER_TRANSPORT_DSN)%'
+          - '%env(ENQUEUE_DSN)%'
 
-    aa.command_bus.transport.sender:
-        class: 'Symfony\Component\Messenger\Transport\AmqpExt\AmqpSender'
-        factory: 'Aa\AkeneoImport\CommandBus\TransportFactory:createSender'
+    Aa\AkeneoImport\CommandBus\Transport\Sender:
+        factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createSender'
 
-    aa.command_bus.transport.receiver:
-        class: 'Symfony\Component\Messenger\Transport\AmqpExt\AmqpReceiver'
-        factory: 'Aa\AkeneoImport\CommandBus\TransportFactory:createReceiver'
+    Aa\AkeneoImport\CommandBus\Transport\Receiver:
+        factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createReceiver'
 
 
     Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler:
         arguments:
-          - '@aa.command_bus.transport.sender'
+          - '@Aa\AkeneoImport\CommandBus\Transport\Sender'
 
     Aa\AkeneoImport\CommandBus\CommandBusFactory:
 
@@ -75,8 +73,7 @@ services:
 
     Aa\AkeneoImport\CommandBus\Consumer:
         arguments:
-            - '@aa.command_bus.transport.receiver'
-            - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
+            - '@Aa\AkeneoImport\CommandBus\Transport\Receiver'
 
 
     App\Command\ImportCommand:

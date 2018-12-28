@@ -2,6 +2,8 @@
 
 ## All
 
+1. Finish consumer - check exceptions 
+
 1. Improve namespaces
 1. Move normalizers (getData -> toArray, to to StandardFormat)
 

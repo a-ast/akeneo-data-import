@@ -48,18 +48,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "4f7596e519ba5c30c11477c87bead84dea671abb"
+                "reference": "d830866d476f962dffbc0aed66a5017bbaabb77e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/4f7596e519ba5c30c11477c87bead84dea671abb",
-                "reference": "4f7596e519ba5c30c11477c87bead84dea671abb",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/d830866d476f962dffbc0aed66a5017bbaabb77e",
+                "reference": "d830866d476f962dffbc0aed66a5017bbaabb77e",
                 "shasum": ""
             },
             "require": {
                 "aa/akeneo-import-commands": "dev-master",
+                "enqueue/amqp-ext": "^0.9",
+                "enqueue/dsn": "^0.9.2",
                 "php": ">=7.1",
-                "symfony/amqp-pack": "^1.0"
+                "symfony/amqp-pack": "^1.0",
+                "symfony/serializer": "^4.1"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^5.1"
             },
             "type": "library",
             "autoload": {
@@ -75,7 +81,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2018-12-14T12:20:00+00:00"
+            "time": "2018-12-20T16:19:23+00:00"
         },
         {
             "name": "aa/akeneo-import-api-command-handler",
@@ -120,12 +126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "74bffeca4f66bcd1cb6a7e9868743bb355a6d418"
+                "reference": "94c82f3a85b61c1e3e4cadb9eeaf4875ad705957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/74bffeca4f66bcd1cb6a7e9868743bb355a6d418",
-                "reference": "74bffeca4f66bcd1cb6a7e9868743bb355a6d418",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/94c82f3a85b61c1e3e4cadb9eeaf4875ad705957",
+                "reference": "94c82f3a85b61c1e3e4cadb9eeaf4875ad705957",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +151,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2018-12-14T10:48:04+00:00"
+            "time": "2018-12-19T15:51:20+00:00"
         },
         {
             "name": "akeneo/api-php-client",
@@ -379,6 +385,159 @@
                 "php"
             ],
             "time": "2018-10-21T19:22:05+00:00"
+        },
+        {
+            "name": "enqueue/amqp-ext",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/amqp-ext.git",
+                "reference": "a4ee36fe84046d26b87b1f9c4f51ac85383ebcbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/amqp-ext/zipball/a4ee36fe84046d26b87b1f9c4f51ac85383ebcbe",
+                "reference": "a4ee36fe84046d26b87b1f9c4f51ac85383ebcbe",
+                "shasum": ""
+            },
+            "require": {
+                "enqueue/amqp-tools": "^0.9",
+                "ext-amqp": "^1.9.3",
+                "php": "^7.1.3",
+                "queue-interop/amqp-interop": "^0.8",
+                "queue-interop/queue-interop": "^0.7|^0.8"
+            },
+            "require-dev": {
+                "empi89/php-amqp-stubs": "*@dev",
+                "enqueue/null": "0.9.x-dev",
+                "enqueue/test": "0.9.x-dev",
+                "phpunit/phpunit": "~5.4.0",
+                "queue-interop/queue-spec": "^0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\AmqpExt\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Message Queue Amqp Transport",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "AMQP",
+                "messaging",
+                "queue"
+            ],
+            "time": "2018-12-13T15:31:01+00:00"
+        },
+        {
+            "name": "enqueue/amqp-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/amqp-tools.git",
+                "reference": "c10a1158f306eb611c86667a79bf30a7e1f3c23a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/amqp-tools/zipball/c10a1158f306eb611c86667a79bf30a7e1f3c23a",
+                "reference": "c10a1158f306eb611c86667a79bf30a7e1f3c23a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "queue-interop/amqp-interop": "^0.8",
+                "queue-interop/queue-interop": "^0.7|^0.8"
+            },
+            "require-dev": {
+                "enqueue/dsn": "0.9.x-dev",
+                "enqueue/null": "0.9.x-dev",
+                "enqueue/test": "0.9.x-dev",
+                "phpunit/phpunit": "~5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\AmqpTools\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Message Queue Amqp Tools",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "AMQP",
+                "messaging",
+                "queue"
+            ],
+            "time": "2018-12-18T18:27:30+00:00"
+        },
+        {
+            "name": "enqueue/dsn",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/dsn.git",
+                "reference": "5d011c648395307c740d8c0e420f8a9faebce72f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/5d011c648395307c740d8c0e420f8a9faebce72f",
+                "reference": "5d011c648395307c740d8c0e420f8a9faebce72f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\Dsn\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Parse DSN",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "dsn",
+                "parse"
+            ],
+            "time": "2018-11-28T17:29:36+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1370,6 +1529,91 @@
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
+            "name": "queue-interop/amqp-interop",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/queue-interop/amqp-interop.git",
+                "reference": "2029c3b3b9f10cc1c0a219650f66ab68fcfe656d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/queue-interop/amqp-interop/zipball/2029c3b3b9f10cc1c0a219650f66ab68fcfe656d",
+                "reference": "2029c3b3b9f10cc1c0a219650f66ab68fcfe656d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "queue-interop/queue-interop": "^0.7|^0.8"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Amqp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-12-13T13:42:47+00:00"
+        },
+        {
+            "name": "queue-interop/queue-interop",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/queue-interop/queue-interop.git",
+                "reference": "b43af85f635439fa2c9a6d8fd486489da4869741"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/queue-interop/queue-interop/zipball/b43af85f635439fa2c9a6d8fd486489da4869741",
+                "reference": "b43af85f635439fa2c9a6d8fd486489da4869741",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.5",
+                "queue-interop/queue-spec": "^0.6@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Queue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of MQs objects. Based on Java JMS",
+            "homepage": "https://github.com/queue-interop/queue-interop",
+            "keywords": [
+                "MQ",
+                "jms",
+                "message queue",
+                "messaging",
+                "queue"
+            ],
+            "time": "2018-11-22T17:53:21+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.2",
             "source": {
@@ -1443,12 +1687,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "d5713a7be5b6f09ce6b3b245b66eb70f1ca937ed"
+                "reference": "9b1e1ba2f94dbace2b7af39ca5a2b7df603691aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/d5713a7be5b6f09ce6b3b245b66eb70f1ca937ed",
-                "reference": "d5713a7be5b6f09ce6b3b245b66eb70f1ca937ed",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/9b1e1ba2f94dbace2b7af39ca5a2b7df603691aa",
+                "reference": "9b1e1ba2f94dbace2b7af39ca5a2b7df603691aa",
                 "shasum": ""
             },
             "require": {
@@ -1512,7 +1756,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-19T09:29:56+00:00"
         },
         {
             "name": "symfony/config",
@@ -1583,12 +1827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "7dac0f8df415100d5d4ecd71213d794546d65d0e"
+                "reference": "3f8a62ad1763ab3a43b1e30d90a6f443bab15fa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/7dac0f8df415100d5d4ecd71213d794546d65d0e",
-                "reference": "7dac0f8df415100d5d4ecd71213d794546d65d0e",
+                "url": "https://api.github.com/repos/symfony/console/zipball/3f8a62ad1763ab3a43b1e30d90a6f443bab15fa5",
+                "reference": "3f8a62ad1763ab3a43b1e30d90a6f443bab15fa5",
                 "shasum": ""
             },
             "require": {
@@ -1644,7 +1888,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-17T13:51:43+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -1776,12 +2020,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "23084c294ac5d93b5ca1e67841ce9ae128e3b532"
+                "reference": "9426384715c392e3659cec27fce9fb21fbf71f90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/23084c294ac5d93b5ca1e67841ce9ae128e3b532",
-                "reference": "23084c294ac5d93b5ca1e67841ce9ae128e3b532",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/9426384715c392e3659cec27fce9fb21fbf71f90",
+                "reference": "9426384715c392e3659cec27fce9fb21fbf71f90",
                 "shasum": ""
             },
             "require": {
@@ -1841,7 +2085,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-17T14:43:57+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -1906,12 +2150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "a6ec602b1c247fd67f9104642f397bc70667df84"
+                "reference": "a0c96c8771a003c058ef2e4366055688be8bd1df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a6ec602b1c247fd67f9104642f397bc70667df84",
-                "reference": "a6ec602b1c247fd67f9104642f397bc70667df84",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a0c96c8771a003c058ef2e4366055688be8bd1df",
+                "reference": "a0c96c8771a003c058ef2e4366055688be8bd1df",
                 "shasum": ""
             },
             "require": {
@@ -1962,7 +2206,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-17T13:49:19+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2069,12 +2313,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "4a7cd6d28041ebcdaecbe9f832cc3bc2f4ff4831"
+                "reference": "faca89864228928bf512d9f5d5fbfa5151456ef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/4a7cd6d28041ebcdaecbe9f832cc3bc2f4ff4831",
-                "reference": "4a7cd6d28041ebcdaecbe9f832cc3bc2f4ff4831",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/faca89864228928bf512d9f5d5fbfa5151456ef4",
+                "reference": "faca89864228928bf512d9f5d5fbfa5151456ef4",
                 "shasum": ""
             },
             "require": {
@@ -2109,7 +2353,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2018-12-11T14:13:56+00:00"
+            "time": "2018-12-20T10:53:10+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -2117,12 +2361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "bc4e4a29f2350dc86aa603cdd85efa382ad7baff"
+                "reference": "0e60e0452cb327db6de87e9067bf72545cb7cd20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/bc4e4a29f2350dc86aa603cdd85efa382ad7baff",
-                "reference": "bc4e4a29f2350dc86aa603cdd85efa382ad7baff",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/0e60e0452cb327db6de87e9067bf72545cb7cd20",
+                "reference": "0e60e0452cb327db6de87e9067bf72545cb7cd20",
                 "shasum": ""
             },
             "require": {
@@ -2190,7 +2434,6 @@
             },
             "suggest": {
                 "ext-apcu": "For best performance of the system caches",
-                "phpdocumentor/reflection-docblock": "For display additional information in debug:container",
                 "symfony/console": "For using the console commands",
                 "symfony/form": "For using forms",
                 "symfony/property-info": "For using the property_info service",
@@ -2229,7 +2472,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T13:01:35+00:00"
+            "time": "2018-12-17T14:43:57+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2291,12 +2534,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "a91b2522475ac55a7d312961645cf6a2b57bea0c"
+                "reference": "69e072692482778df08f4662af2de8cf032cfdfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a91b2522475ac55a7d312961645cf6a2b57bea0c",
-                "reference": "a91b2522475ac55a7d312961645cf6a2b57bea0c",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/69e072692482778df08f4662af2de8cf032cfdfb",
+                "reference": "69e072692482778df08f4662af2de8cf032cfdfb",
                 "shasum": ""
             },
             "require": {
@@ -2372,7 +2615,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-17T13:49:19+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -2762,12 +3005,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "ec8e9f67c281ad7f81a5878d6bf3ae5331b11309"
+                "reference": "36a8cd34efd35f8273f2915b129f0c2f0bc79605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/ec8e9f67c281ad7f81a5878d6bf3ae5331b11309",
-                "reference": "ec8e9f67c281ad7f81a5878d6bf3ae5331b11309",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/36a8cd34efd35f8273f2915b129f0c2f0bc79605",
+                "reference": "36a8cd34efd35f8273f2915b129f0c2f0bc79605",
                 "shasum": ""
             },
             "require": {
@@ -2831,7 +3074,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2018-12-17T13:49:19+00:00"
         },
         {
             "name": "symfony/serializer",
