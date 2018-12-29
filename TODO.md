@@ -15,7 +15,7 @@
 1. Continue simplifying config to use in symfony and non-symfony apps
     1. Think how to run it from command, how to define aliases
 1. Test work without amqp
-2. Implement consumer, see Sconsumer command from messnger
+2. Implement consumer, see consumer command from messenger
 3. Move all messenger-related classes to Messenger endpoint.
 
 1. Test reject/requeue in the MessageHandler after implementing Product models
