@@ -44,7 +44,7 @@ class ImportCommand extends Command
     {
         $this
             ->setName('aa:akeneo-import:import')
-            ->setDescription('Import products')
+            ->setDescription('Import pim data using given provider and import handler.')
             ->addArgument('handler-alias', InputArgument::REQUIRED, 'Alias of a command list handler.')
         ;
     }

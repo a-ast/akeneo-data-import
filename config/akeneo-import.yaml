@@ -1,12 +1,5 @@
 services:
 
-    ### Debug
-#    Aa\AkeneoImport\MessageHandler\CommandListMessageHandler:
-#        arguments:
-#            - '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
-#        tags:
-#            - messenger.message_handler
-#
 
     ### API batch handler
 
@@ -28,9 +21,6 @@ services:
             - '%env(AKENEO_API_SECRET)%'
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
-
-    Akeneo\Pim\ApiClient\AkeneoPimClientInterface: '@aa.api.client'
-
 
     ## Serializer
 

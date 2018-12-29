@@ -31,12 +31,16 @@ class TestProvider implements CommandProviderInterface
 //            yield $product;
 //        }
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 3; $i++) {
 
             $modelCode = sprintf('product-model-%s', $i);
 
-            $model = new UpdateProductModel($modelCode, 'clothing_size');
-            $model->addValue('name', sprintf('Product model %d', $i));
+            $model = new UpdateProductModel($modelCode);
+            $model
+                ->setFamilyVariant('clothing_size')
+                ->addValue('name', sprintf('Product model %d', $i))
+                ->addValue('color', null)
+            ;
 
             yield $model;
 
@@ -51,7 +55,9 @@ class TestProvider implements CommandProviderInterface
                 $product
                     ->setFamily('clothing')
                     ->setParent($modelCode)
-                    ->addValue('size', $axis);
+                    ->addValue('size', $axis)
+                    ->setEnabled(false)
+                ;
 
                 yield $product;
             }

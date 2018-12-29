@@ -149,6 +149,9 @@
     "symfony/http-kernel": {
         "version": "4.3-dev"
     },
+    "symfony/inflector": {
+        "version": "4.3-dev"
+    },
     "symfony/messenger": {
         "version": "4.1",
         "recipe": {
@@ -163,6 +166,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
+    },
+    "symfony/property-access": {
+        "version": "4.3-dev"
     },
     "symfony/routing": {
         "version": "4.2",
