@@ -5,7 +5,7 @@ framework:
 #            amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
 #
 #        routing:
-#            'Aa\AkeneoImport\ImportCommands\CommandListInterface': amqp
+#            'Aa\AkeneoImport\ImportCommand\CommandListInterface': amqp
 
 #        serializer:
 #            context:

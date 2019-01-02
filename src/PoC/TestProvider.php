@@ -2,10 +2,10 @@
 
 namespace App\PoC;
 
-use Aa\AkeneoImport\ImportCommands\CommandInterface;
-use Aa\AkeneoImport\ImportCommands\CommandProviderInterface;
-use Aa\AkeneoImport\ImportCommands\Product\UpdateProduct;
-use Aa\AkeneoImport\ImportCommands\ProductModel\UpdateProductModel;
+use Aa\AkeneoImport\ImportCommand\CommandInterface;
+use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
+use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
+use Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel;
 use Traversable;
 
 class TestProvider implements CommandProviderInterface
@@ -35,7 +35,7 @@ class TestProvider implements CommandProviderInterface
 
             $modelCode = sprintf('product-model-%s', $i);
 
-            $model = new UpdateProductModel($modelCode);
+            $model = new UpdateOrCreateProductModel($modelCode);
             $model
                 ->setFamilyVariant('clothing_size')
                 ->addValue('name', sprintf('Product model %d', $i))
@@ -50,7 +50,7 @@ class TestProvider implements CommandProviderInterface
 
                 $identifier = sprintf('product-%s-%s', $modelCode, $axis);
 
-                $product = new UpdateProduct($identifier);
+                $product = new UpdateOrCreateProduct($identifier);
 
                 $product
                     ->setFamily('clothing')

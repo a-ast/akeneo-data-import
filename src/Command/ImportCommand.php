@@ -3,8 +3,8 @@
 namespace App\Command;
 
 use Aa\AkeneoImport\Import\Importer;
-use Aa\AkeneoImport\ImportCommands\CommandProviderInterface;
-use Aa\AkeneoImport\ImportCommands\Exception\CommandHandlerException;
+use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
+use Aa\AkeneoImport\ImportCommand\Exception\CommandHandlerException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,12 +20,12 @@ class ImportCommand extends Command
     private $importer;
 
     /**
-     * @var \Aa\AkeneoImport\ImportCommands\CommandListHandlerInterface[]
+     * @var \Aa\AkeneoImport\ImportCommand\CommandListHandlerInterface[]
      */
     private $handlers;
 
     /**
-     * @var \Aa\AkeneoImport\ImportCommands\CommandProviderInterface
+     * @var \Aa\AkeneoImport\ImportCommand\CommandProviderInterface
      */
     private $provider;
 

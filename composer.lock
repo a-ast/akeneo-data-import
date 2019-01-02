@@ -127,21 +127,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "94c82f3a85b61c1e3e4cadb9eeaf4875ad705957"
+                "reference": "bcb0485f976b3612ae0559e71effab716b42b942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/94c82f3a85b61c1e3e4cadb9eeaf4875ad705957",
-                "reference": "94c82f3a85b61c1e3e4cadb9eeaf4875ad705957",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/bcb0485f976b3612ae0559e71effab716b42b942",
+                "reference": "bcb0485f976b3612ae0559e71effab716b42b942",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.1",
+                "symfony/serializer": "^4.2"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^5.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Aa\\AkeneoImport\\ImportCommands\\": "src/"
+                    "Aa\\AkeneoImport\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -152,7 +156,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2018-12-19T15:51:20+00:00"
+            "time": "2019-01-02T14:27:00+00:00"
         },
         {
             "name": "akeneo/api-php-client",
@@ -605,12 +609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "e78e0b28661154c4cd7a7c338ec69ab1fb1af291"
+                "reference": "5c3782790bbc6878dd1030edab2fe5fc0e56b04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/e78e0b28661154c4cd7a7c338ec69ab1fb1af291",
-                "reference": "e78e0b28661154c4cd7a7c338ec69ab1fb1af291",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/5c3782790bbc6878dd1030edab2fe5fc0e56b04a",
+                "reference": "5c3782790bbc6878dd1030edab2fe5fc0e56b04a",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +625,7 @@
             },
             "require-dev": {
                 "henrikbjorn/phpspec-code-coverage": "^2.0.2",
-                "php-http/httplug": "^1.0|^2.0",
+                "php-http/httplug": "^1.0 || ^2.0",
                 "php-http/message-factory": "^1.0",
                 "phpspec/phpspec": "^2.4",
                 "puli/composer-plugin": "1.0.0-beta10"
@@ -662,7 +666,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2018-12-29T09:41:31+00:00"
+            "time": "2018-12-31T07:55:13+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -1061,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "2cc4a01788191489dc7459446ba832fa79a216a7"
+                "reference": "014d250daebff39eba15ba990eeb2a140798e77c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/2cc4a01788191489dc7459446ba832fa79a216a7",
-                "reference": "2cc4a01788191489dc7459446ba832fa79a216a7",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/014d250daebff39eba15ba990eeb2a140798e77c",
+                "reference": "014d250daebff39eba15ba990eeb2a140798e77c",
                 "shasum": ""
             },
             "require": {
@@ -1102,7 +1106,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-06-28T15:35:32+00:00"
+            "time": "2018-12-29T15:36:03+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2054,12 +2058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "0af4b5a59c8136a8044d40bf5ab44ee50acb79b4"
+                "reference": "040fac4c400501655e036e80ba730aa7adeda18f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/0af4b5a59c8136a8044d40bf5ab44ee50acb79b4",
-                "reference": "0af4b5a59c8136a8044d40bf5ab44ee50acb79b4",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/040fac4c400501655e036e80ba730aa7adeda18f",
+                "reference": "040fac4c400501655e036e80ba730aa7adeda18f",
                 "shasum": ""
             },
             "require": {
@@ -2165,7 +2169,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-12-24T10:03:37+00:00"
+            "time": "2019-01-02T12:07:52+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2227,12 +2231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "3f8c00ace3b6acbd886533f153a73e40fe730083"
+                "reference": "5f01f18e9f14a8a76bd806f0a36affdb0ac82164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/3f8c00ace3b6acbd886533f153a73e40fe730083",
-                "reference": "3f8c00ace3b6acbd886533f153a73e40fe730083",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/5f01f18e9f14a8a76bd806f0a36affdb0ac82164",
+                "reference": "5f01f18e9f14a8a76bd806f0a36affdb0ac82164",
                 "shasum": ""
             },
             "require": {
@@ -2308,7 +2312,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-24T10:03:37+00:00"
+            "time": "2019-01-02T10:31:36+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -2699,12 +2703,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/serializer.git",
-                "reference": "ebee81109952fb636381399f8258e2954cfb24fd"
+                "reference": "234f4c3e2f2b532d6a4cceb85e082a526de40372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/ebee81109952fb636381399f8258e2954cfb24fd",
-                "reference": "ebee81109952fb636381399f8258e2954cfb24fd",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/234f4c3e2f2b532d6a4cceb85e082a526de40372",
+                "reference": "234f4c3e2f2b532d6a4cceb85e082a526de40372",
                 "shasum": ""
             },
             "require": {
@@ -2771,7 +2775,7 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-13T12:43:21+00:00"
+            "time": "2019-01-01T18:36:06+00:00"
         },
         {
             "name": "symfony/var-exporter",
