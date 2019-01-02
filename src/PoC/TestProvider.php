@@ -39,7 +39,7 @@ class TestProvider implements CommandProviderInterface
             $model
                 ->setFamilyVariant('clothing_size')
                 ->addValue('name', sprintf('Product model %d', $i))
-                ->addValue('color', null)
+                ->addValue('color', 'green')
             ;
 
             yield $model;
@@ -56,7 +56,7 @@ class TestProvider implements CommandProviderInterface
                     ->setFamily('clothing')
                     ->setParent($modelCode)
                     ->addValue('size', $axis)
-                    ->setEnabled(false)
+                    ->setEnabled(true)
                 ;
 
                 yield $product;

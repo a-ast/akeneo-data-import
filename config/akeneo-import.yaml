@@ -3,10 +3,12 @@ services:
 
     ### API batch handler
 
-    Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
+    Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:
         arguments:
             - '@aa.api.client'
-            - '@serializer'
+
+    Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
+        factory: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:createHandler'
 
     aa.api.client_builder:
         class: Akeneo\Pim\ApiClient\AkeneoPimClientBuilder
@@ -22,23 +24,7 @@ services:
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
 
-    ## Serializer
-
-    Aa\AkeneoImport\Serializer\CommandListNormalizer:
-        calls:
-            - ['setDenormalizer', ['@serializer']]
-            - ['setNormalizer', ['@serializer']]
-        tags:
-            - { name: 'serializer.normalizer' }
-
-    Aa\AkeneoImport\Serializer\CommandNormalizer:
-        calls:
-            - ['setNormalizer', ['@serializer']]
-        tags:
-            - { name: 'serializer.normalizer' }
-
-
-    ## App
+    ## Akeneo Import
 
     Aa\AkeneoImport\CommandBus\Transport\TransportFactory:
         arguments:
@@ -49,7 +35,6 @@ services:
 
     Aa\AkeneoImport\CommandBus\Transport\Receiver:
         factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createReceiver'
-
 
     Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler:
         arguments:
@@ -65,6 +50,7 @@ services:
         arguments:
             - '@Aa\AkeneoImport\CommandBus\Transport\Receiver'
 
+    ## App
 
     App\Command\ImportCommand:
         arguments:
