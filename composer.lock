@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "63986153fa0f9567e5950974105382842c9b11a0"
+                "reference": "b16da16f3466021993ad1a3abcaaaf427daa958d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/63986153fa0f9567e5950974105382842c9b11a0",
-                "reference": "63986153fa0f9567e5950974105382842c9b11a0",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/b16da16f3466021993ad1a3abcaaaf427daa958d",
+                "reference": "b16da16f3466021993ad1a3abcaaaf427daa958d",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2019-01-02T14:41:06+00:00"
+            "time": "2019-01-02T16:20:31+00:00"
         },
         {
             "name": "akeneo/api-php-client",

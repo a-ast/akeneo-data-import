@@ -68,4 +68,7 @@ services:
             - '@Aa\AkeneoImport\CommandBus\Consumer'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+            -
+                product: 'Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct'
+                model: 'Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel'
         tags: ['console.command']
