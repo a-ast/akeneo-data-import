@@ -55,7 +55,9 @@ services:
     App\Command\ImportCommand:
         arguments:
             - '@Aa\AkeneoImport\Import\Importer'
-            - '@App\PoC\TestProvider'
+            -
+                product: '@App\PoC\TestProductProvider'
+                model: '@App\PoC\TestProductAndModelProvider'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'

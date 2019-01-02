@@ -1,20 +1,18 @@
 # TODO
 
 ## All
-Task 1: move normalizers to commands (improve namespaces there)
-Create HandlerBuilder in handler with created serializer (to avoid global config for that)
 
-1. Test both ways od product update - direct API and via rabbitMQ
+1. Test both ways of product update - direct API and via rabbitMQ
 1. Implement fake data generator.
 
 ## Akeneo Import Tool
 
-1. Implement selecting data provider
-1. Implement own simple command bus.
+1.
 
 ## Akeneo Import
 
 1. Impement selecting queue in  consumer/receiver
+1. Implement own simple command bus.
 1. Move all messenger-related classes to Messenger endpoint.
 1. Test reject/requeue in the MessageHandler after implementing Product models
 
