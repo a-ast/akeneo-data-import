@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "d2730a6575f72e89b00645638dd32810c9672fc8"
+                "reference": "09d184da116a7f71862b0847d87e828fadfb8fb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/d2730a6575f72e89b00645638dd32810c9672fc8",
-                "reference": "d2730a6575f72e89b00645638dd32810c9672fc8",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/09d184da116a7f71862b0847d87e828fadfb8fb6",
+                "reference": "09d184da116a7f71862b0847d87e828fadfb8fb6",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2019-01-02T14:44:25+00:00"
+            "time": "2019-01-02T21:07:37+00:00"
         },
         {
             "name": "aa/akeneo-import-api-command-handler",
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "b16da16f3466021993ad1a3abcaaaf427daa958d"
+                "reference": "250f29a51a9a4213cacb30d18086493db2958021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/b16da16f3466021993ad1a3abcaaaf427daa958d",
-                "reference": "b16da16f3466021993ad1a3abcaaaf427daa958d",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/250f29a51a9a4213cacb30d18086493db2958021",
+                "reference": "250f29a51a9a4213cacb30d18086493db2958021",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2019-01-02T16:20:31+00:00"
+            "time": "2019-01-02T22:08:54+00:00"
         },
         {
             "name": "akeneo/api-php-client",

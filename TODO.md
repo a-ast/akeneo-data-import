@@ -11,10 +11,11 @@
 
 ## Akeneo Import
 
-1. Impement selecting queue in  consumer/receiver
 1. Implement own simple command bus.
-1. Move all messenger-related classes to Messenger endpoint.
+1. ? Move all messenger-related classes to Messenger endpoint.
 1. Test reject/requeue in the MessageHandler after implementing Product models
+1. Create bundle?
+
 
 ## Import Commands
 
@@ -30,6 +31,3 @@
 
 1. Add uploading images using ($this->client->getProductMediaFileApi())
 
-## Akeneo Simplified/Fast Api Command Handler
-
-1. Move serializer?

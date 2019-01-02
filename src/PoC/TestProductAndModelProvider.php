@@ -15,7 +15,7 @@ class TestProductAndModelProvider implements CommandProviderInterface
      */
     public function getCommands(): Traversable
     {
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $modelCode = sprintf('product-model-%s', $i);
 

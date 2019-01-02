@@ -14,7 +14,7 @@ class TestProductProvider implements CommandProviderInterface
      */
     public function getCommands(): Traversable
     {
-        for ($i = 1; $i <= 20; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
 
             $identifier = sprintf('test-%d', $i);
             $product = new UpdateOrCreateProduct($identifier);
@@ -24,6 +24,7 @@ class TestProductProvider implements CommandProviderInterface
                 ->setCategories(['notebooks', 'goodies'])
                 ->addValue('name', 'Product '. $identifier . '_' . $i)
                 ->addValue('color', 'red')
+                ->addAssociatedProducts('PACK', ['1712634', '10627329'])
             ;
 
             yield $product;
