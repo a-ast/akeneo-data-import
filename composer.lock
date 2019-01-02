@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "4a8fa733a3638e413399e88c2d5329482589736f"
+                "reference": "d2730a6575f72e89b00645638dd32810c9672fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/4a8fa733a3638e413399e88c2d5329482589736f",
-                "reference": "4a8fa733a3638e413399e88c2d5329482589736f",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/d2730a6575f72e89b00645638dd32810c9672fc8",
+                "reference": "d2730a6575f72e89b00645638dd32810c9672fc8",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2018-12-29T12:32:28+00:00"
+            "time": "2019-01-02T14:44:25+00:00"
         },
         {
             "name": "aa/akeneo-import-api-command-handler",
@@ -90,12 +90,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-api-command-handler.git",
-                "reference": "87e0de68aa962d1a92e49bb08055e627d0b5f9cd"
+                "reference": "e7cc484b1180252cdc40b557ddbaf0532942c34c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/87e0de68aa962d1a92e49bb08055e627d0b5f9cd",
-                "reference": "87e0de68aa962d1a92e49bb08055e627d0b5f9cd",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/e7cc484b1180252cdc40b557ddbaf0532942c34c",
+                "reference": "e7cc484b1180252cdc40b557ddbaf0532942c34c",
                 "shasum": ""
             },
             "require": {
@@ -119,7 +119,7 @@
                 }
             ],
             "description": "akeneo-import-api-command-handler",
-            "time": "2018-12-19T15:50:31+00:00"
+            "time": "2019-01-02T14:52:26+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "bcb0485f976b3612ae0559e71effab716b42b942"
+                "reference": "63986153fa0f9567e5950974105382842c9b11a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/bcb0485f976b3612ae0559e71effab716b42b942",
-                "reference": "bcb0485f976b3612ae0559e71effab716b42b942",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/63986153fa0f9567e5950974105382842c9b11a0",
+                "reference": "63986153fa0f9567e5950974105382842c9b11a0",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2019-01-02T14:27:00+00:00"
+            "time": "2019-01-02T14:41:06+00:00"
         },
         {
             "name": "akeneo/api-php-client",
