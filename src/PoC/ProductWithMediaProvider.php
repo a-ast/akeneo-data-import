@@ -19,7 +19,8 @@ class ProductWithMediaProvider implements CommandProviderInterface
         $product = new UpdateOrCreateProduct('test-product-with-media');
         $product
             //->setFamily('clothing')
-            ->addImageValue('variation_image', $mediaFolder . 'tshirt.png');
+            ->addImageValue('variation_image', $mediaFolder . 'tshirt.png')
+            ->addFileValue('notice', $mediaFolder . 'dummy.pdf');
 
         yield $product;
     }
