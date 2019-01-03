@@ -2,9 +2,10 @@
 
 ## All
 
-1. Practice with Query/Command approach
-1. Test both ways of product update - direct API and via rabbitMQ
+1. Remove all @todos
+1. Test both ways of product update - direct API and via rabbitMQ, test failure scenarios
 1. Implement fake data generator.
+1. Install supervisord and test with 1M products (run on DO?)
 
 ## Akeneo Import Tool
 
@@ -12,7 +13,7 @@
 
 ## Akeneo Import
 
-1. Implement own simple command bus.
+1. Implement own simple command bus (pros/cons analysis).
 1. Create bundle?
     1. With the consume command that shows proper progress and statuses (requeue etc)
 1. Important: journal/log/report for failed requests in consumer (in order to monitor what happened in MQ).

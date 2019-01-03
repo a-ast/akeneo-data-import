@@ -55,7 +55,8 @@ services:
             - '@Aa\AkeneoImport\Import\Importer'
             -
                 product: '@App\Example\TestProductProvider'
-                model: '@App\Example\TestProductAndModelProvider'
+                product_and_model: '@App\Example\TestProductAndModelProvider'
+                category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
                 query: '@App\Example\QueryAndCommandProvider'
             -
