@@ -56,9 +56,9 @@ services:
         arguments:
             - '@Aa\AkeneoImport\Import\Importer'
             -
-                product: '@App\PoC\TestProductProvider'
-                model: '@App\PoC\TestProductAndModelProvider'
-                media: '@App\PoC\ProductWithMediaProvider'
+                product: '@App\Example\TestProductProvider'
+                model: '@App\Example\TestProductAndModelProvider'
+                media: '@App\Example\ProductWithMediaProvider'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'

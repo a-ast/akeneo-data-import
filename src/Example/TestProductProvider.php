@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PoC;
+namespace App\Example;
 
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
