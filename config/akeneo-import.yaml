@@ -58,6 +58,7 @@ services:
             -
                 product: '@App\PoC\TestProductProvider'
                 model: '@App\PoC\TestProductAndModelProvider'
+                media: '@App\PoC\ProductWithMediaProvider'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
