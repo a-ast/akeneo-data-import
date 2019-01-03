@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57b95db062ae93652850d6f17c133a56",
+    "content-hash": "0340e7612467857df31eb1697c9eac23",
     "packages": [
         {
             "name": "aa/akeneo-fake-product-provider",
@@ -2908,7 +2908,8 @@
         "symfony/console": 20,
         "symfony/dotenv": 20,
         "symfony/yaml": 20,
-        "aa/akeneo-import-api-command-handler": 20
+        "aa/akeneo-import-api-command-handler": 20,
+        "akeneo/api-php-client": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

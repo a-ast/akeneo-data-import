@@ -17,7 +17,9 @@
         "symfony/console": "^4.3@dev",
         "symfony/dotenv": "^4.3@dev",
         "symfony/yaml": "^4.3@dev",
-        "aa/akeneo-import-api-command-handler": "dev-master"
+        "aa/akeneo-import-api-command-handler": "dev-master",
+        "akeneo/api-php-client": "dev-master",
+        "php-http/guzzle6-adapter": "1.1.1"
     },
     "autoload": {
         "psr-4": {
