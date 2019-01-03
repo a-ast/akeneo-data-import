@@ -1,28 +1,26 @@
 services:
 
-
     ### API batch handler
-
-    Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:
-        arguments:
-            - '@aa.api.client'
 
     Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
         factory: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:createHandler'
 
-    aa.api.client_builder:
-        class: Akeneo\Pim\ApiClient\AkeneoPimClientBuilder
+    Akeneo\Pim\ApiClient\AkeneoPimClientBuilder:
         arguments:
             - '%env(AKENEO_API_HOST)%'
 
-    aa.api.client:
-        class: Akeneo\Pim\ApiClient\AkeneoPimClientInterface
-        factory: 'aa.api.client_builder:buildAuthenticatedByPassword'
+    Akeneo\Pim\ApiClient\AkeneoPimClient:
+        factory: 'Akeneo\Pim\ApiClient\AkeneoPimClientBuilder:buildAuthenticatedByPassword'
         arguments:
             - '%env(AKENEO_API_CLIENT_ID)%'
             - '%env(AKENEO_API_SECRET)%'
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
+
+    Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:
+        arguments:
+            - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
+
 
     ## Akeneo Import
 
@@ -59,6 +57,7 @@ services:
                 product: '@App\Example\TestProductProvider'
                 model: '@App\Example\TestProductAndModelProvider'
                 media: '@App\Example\ProductWithMediaProvider'
+                query: '@App\Example\QueryAndCommandProvider'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'

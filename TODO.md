@@ -2,6 +2,7 @@
 
 ## All
 
+1. Practice with Query/Command approach
 1. Test both ways of product update - direct API and via rabbitMQ
 1. Implement fake data generator.
 
@@ -20,12 +21,14 @@
 ## Import Commands
 
 1. Implement limitations of type in a command list and overall limit
-1. Test with product models
-1. Implement uploading images
-
+1. Add all attribute types for product and product model commands.
+1. Product/model delete commands.
+1. CreateOrUpdateCategory
+1. CreateOrUpdateAttribute
+1. CreateOrUpdateAttributeOption
 
 
 ## Akeneo Api Command Handler
 
-1. Add uploading images using ($this->client->getProductMediaFileApi())
+1. 
 
