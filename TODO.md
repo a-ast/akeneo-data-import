@@ -1,9 +1,16 @@
 # TODO
 
+## Important
+1. Test tool after api handler refactoring.
+
 ## All
+1. CoomandList -> CommandBatch? CommandBag?
+
+1. With own bus: generate import id and pass it to handlers, identify every batch (command list) for logging, recovering
 
 1. Remove all @todos
 1. Test both ways of product update - direct API and via rabbitMQ, test failure scenarios
+    1.1 Implement processing media via MQ
 1. Implement fake data generator.
 1. Install supervisord and test with 1M products (run on DO?)
 
@@ -12,7 +19,6 @@
 1.
 
 ## Akeneo Import
-
 1. Implement own simple command bus (pros/cons analysis).
 1. Create bundle?
     1. With the consume command that shows proper progress and statuses (requeue etc)
@@ -24,12 +30,11 @@
 1. Implement limitations of type in a command list and overall limit
 1. Add all attribute types for product and product model commands.
 1. Product/model delete commands.
-1. CreateOrUpdateCategory
 1. CreateOrUpdateAttribute
 1. CreateOrUpdateAttributeOption
 
 
 ## Akeneo Api Command Handler
 
-1. 
+1. Extensive logging of failed requests (with import id)
 

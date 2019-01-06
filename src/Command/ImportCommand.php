@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use Aa\AkeneoImport\CommandHandler\ResponseValidator\Exception\ValidationException;
 use Aa\AkeneoImport\Import\Importer;
 use Aa\AkeneoImport\ImportCommand\Exception\CommandHandlerException;
 use Symfony\Component\Console\Command\Command;
@@ -24,7 +25,7 @@ class ImportCommand extends Command
     private $providers;
 
     /**
-     * @var \Aa\AkeneoImport\ImportCommand\CommandListHandlerInterface[]
+     * @var \Aa\AkeneoImport\ImportCommand\CommandBatchHandlerInterface[]
      */
     private $handlers;
 
@@ -60,11 +61,16 @@ class ImportCommand extends Command
 
             $style = new SymfonyStyle($input, $output);
 
-            $style->error($e->getMessage());
-            foreach ($e->getErrors() as $field => $error) {
-                $style->error(sprintf('%s: %s', $field, $error));
-            }
+            $style->error(sprintf('Failed by import of %s: %s', $e->getCommandClass(), $e->getMessage()));
 
+            $previous = $e->getPrevious();
+            if ($previous instanceof ValidationException) {
+                foreach ($previous->getResponse()->getErrors() as $error) {
+                    foreach ($error as $key => $value) {
+                        $output->writeln(sprintf('%s: %s', $key, $value));
+                    }
+                }
+            }
         }
     }
 }
