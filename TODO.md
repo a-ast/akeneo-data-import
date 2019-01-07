@@ -3,9 +3,12 @@
 ## Important
 1. Test tool after api handler refactoring.
 
-## All
-1. CoomandList -> CommandBatch? CommandBag?
+## Next steps
+1. add values for attribute types
+1. todos
+1. delete commands
 
+## All
 1. With own bus: generate import id and pass it to handlers, identify every batch (command list) for logging, recovering
 
 1. Remove all @todos
@@ -28,7 +31,6 @@
 ## Import Commands
 
 1. Implement limitations of type in a command list and overall limit
-1. Add all attribute types for product and product model commands.
 1. Product/model delete commands.
 1. CreateOrUpdateAttribute
 1. CreateOrUpdateAttributeOption

@@ -34,7 +34,7 @@ services:
     Aa\AkeneoImport\CommandBus\Transport\Receiver:
         factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createReceiver'
 
-    Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler:
+    Aa\AkeneoImport\CommandHandler\AsyncCommandBatchHandler:
         arguments:
           - '@Aa\AkeneoImport\CommandBus\Transport\Sender'
 
@@ -61,7 +61,7 @@ services:
                 query: '@App\Example\QueryAndCommandProvider'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
-                amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandListHandler'
+                amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandBatchHandler'
         tags: ['console.command']
 
     App\Command\ConsumeCommand:
