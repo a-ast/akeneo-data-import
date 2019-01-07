@@ -4,63 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b6c4a0f30fc7efc22c1b68404766576",
+    "content-hash": "e8b26506ff34bbb58c3aa4d25b75fde8",
     "packages": [
-        {
-            "name": "aa/akeneo-fake-product-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/a-ast/akeneo-fake-product-provider.git",
-                "reference": "dc1fedbaac82fb7378a93ad5454d3a98f52115fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-fake-product-provider/zipball/dc1fedbaac82fb7378a93ad5454d3a98f52115fb",
-                "reference": "dc1fedbaac82fb7378a93ad5454d3a98f52115fb",
-                "shasum": ""
-            },
-            "require": {
-                "aa/akeneo-import-commands": "dev-master",
-                "akeneo/api-php-client": "dev-master",
-                "php": ">=7.1",
-                "php-http/guzzle6-adapter": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Aa\\AkeneoImport\\Provider\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Andrey Astakhov",
-                    "email": "andrey.astakhov@gmail.com"
-                }
-            ],
-            "description": "Data provider of fake data for import to Akeneo",
-            "time": "2018-12-12T11:27:54+00:00"
-        },
         {
             "name": "aa/akeneo-import",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "09d184da116a7f71862b0847d87e828fadfb8fb6"
+                "reference": "610c9ff1d55a15a571e1b4e997a10135d4279a65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/09d184da116a7f71862b0847d87e828fadfb8fb6",
-                "reference": "09d184da116a7f71862b0847d87e828fadfb8fb6",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/610c9ff1d55a15a571e1b4e997a10135d4279a65",
+                "reference": "610c9ff1d55a15a571e1b4e997a10135d4279a65",
                 "shasum": ""
             },
             "require": {
                 "aa/akeneo-import-commands": "dev-master",
+                "akeneo/api-php-client": "^3.0",
                 "enqueue/amqp-ext": "^0.9",
                 "enqueue/dsn": "^0.9.2",
                 "php": ">=7.1",
+                "php-http/guzzle6-adapter": "^1.1",
                 "symfony/messenger": "^4.2",
                 "symfony/property-access": "^4.2",
                 "symfony/serializer": "^4.2"
@@ -82,44 +48,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2019-01-02T21:07:37+00:00"
-        },
-        {
-            "name": "aa/akeneo-import-api-command-handler",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/a-ast/akeneo-import-api-command-handler.git",
-                "reference": "fc47653c83b38a721715990d74747589543340ad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-api-command-handler/zipball/fc47653c83b38a721715990d74747589543340ad",
-                "reference": "fc47653c83b38a721715990d74747589543340ad",
-                "shasum": ""
-            },
-            "require": {
-                "aa/akeneo-import-commands": "dev-master",
-                "akeneo/api-php-client": "dev-master",
-                "php": ">=7.1",
-                "php-http/guzzle6-adapter": "^1.1",
-                "symfony/serializer": "^4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Aa\\AkeneoImport\\CommandHandler\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Andrey Astakhov",
-                    "email": "andrey.astakhov@gmail.com"
-                }
-            ],
-            "description": "akeneo-import-api-command-handler",
-            "time": "2019-01-03T14:09:20+00:00"
+            "time": "2019-01-07T23:05:24+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
@@ -127,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import-commands.git",
-                "reference": "93f821e84531263474089a37584bfc665b076693"
+                "reference": "91d3b0c8070cd5fb2179ec334c98f2c6db9f0dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/93f821e84531263474089a37584bfc665b076693",
-                "reference": "93f821e84531263474089a37584bfc665b076693",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import-commands/zipball/91d3b0c8070cd5fb2179ec334c98f2c6db9f0dd0",
+                "reference": "91d3b0c8070cd5fb2179ec334c98f2c6db9f0dd0",
                 "shasum": ""
             },
             "require": {
@@ -156,20 +85,20 @@
                 }
             ],
             "description": "Akeneo commands for import",
-            "time": "2019-01-03T15:47:39+00:00"
+            "time": "2019-01-07T11:32:21+00:00"
         },
         {
             "name": "akeneo/api-php-client",
-            "version": "dev-master",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/api-php-client.git",
-                "reference": "6a23695ccfbf64c79cb0d2df7fb1083665e8575c"
+                "reference": "f33664f1b647ce84fa1294d90c0f7d0f7dfcafd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/api-php-client/zipball/6a23695ccfbf64c79cb0d2df7fb1083665e8575c",
-                "reference": "6a23695ccfbf64c79cb0d2df7fb1083665e8575c",
+                "url": "https://api.github.com/repos/akeneo/api-php-client/zipball/f33664f1b647ce84fa1294d90c0f7d0f7dfcafd3",
+                "reference": "f33664f1b647ce84fa1294d90c0f7d0f7dfcafd3",
                 "shasum": ""
             },
             "require": {
@@ -193,6 +122,12 @@
                 "php-http/guzzle6-adapter": "In order to use Guzzle v6 as the HTTP client"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev",
+                    "dev-1.0": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Akeneo\\Pim\\ApiClient\\": "src/"
@@ -209,7 +144,7 @@
                 }
             ],
             "description": "Akeneo PIM client for the API",
-            "time": "2018-12-03T17:55:44+00:00"
+            "time": "2018-06-21T12:31:29+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -609,12 +544,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "be7a6a045cb0b05d6def011bf4ac422c13b0e6a5"
+                "reference": "a2a00eca5af98a76cb53e8535bf64edeb6df2151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/be7a6a045cb0b05d6def011bf4ac422c13b0e6a5",
-                "reference": "be7a6a045cb0b05d6def011bf4ac422c13b0e6a5",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/a2a00eca5af98a76cb53e8535bf64edeb6df2151",
+                "reference": "a2a00eca5af98a76cb53e8535bf64edeb6df2151",
                 "shasum": ""
             },
             "require": {
@@ -624,7 +559,6 @@
                 "nyholm/psr7": "<1.0"
             },
             "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "^2.0.2",
                 "php-http/httplug": "^1.0 || ^2.0",
                 "php-http/message-factory": "^1.0",
                 "phpspec/phpspec": "^2.4",
@@ -666,7 +600,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2019-01-03T07:27:48+00:00"
+            "time": "2019-01-05T17:08:37+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -1524,12 +1458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "471125d6748cf0526e97f83a71f40b17ce65dbc1"
+                "reference": "d4967c85500c52b01b3fa42ae81ab2ab00b9c10d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/471125d6748cf0526e97f83a71f40b17ce65dbc1",
-                "reference": "471125d6748cf0526e97f83a71f40b17ce65dbc1",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d4967c85500c52b01b3fa42ae81ab2ab00b9c10d",
+                "reference": "d4967c85500c52b01b3fa42ae81ab2ab00b9c10d",
                 "shasum": ""
             },
             "require": {
@@ -1585,7 +1519,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-04T15:14:53+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -1661,12 +1595,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "c0ed02a95c3ed88266bba1323da01fb0f008c135"
+                "reference": "b04503aa3b54be19a8e80cd75b9b9be64b62eeb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/c0ed02a95c3ed88266bba1323da01fb0f008c135",
-                "reference": "c0ed02a95c3ed88266bba1323da01fb0f008c135",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/b04503aa3b54be19a8e80cd75b9b9be64b62eeb9",
+                "reference": "b04503aa3b54be19a8e80cd75b9b9be64b62eeb9",
                 "shasum": ""
             },
             "require": {
@@ -1709,7 +1643,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-05T08:11:12+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1717,12 +1651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "e1c5d251f7aa48ce478c19b62d2429b07349e829"
+                "reference": "b6b3341f60d8cd2715a98222981f51fbd8684934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e1c5d251f7aa48ce478c19b62d2429b07349e829",
-                "reference": "e1c5d251f7aa48ce478c19b62d2429b07349e829",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/b6b3341f60d8cd2715a98222981f51fbd8684934",
+                "reference": "b6b3341f60d8cd2715a98222981f51fbd8684934",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1716,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-06T16:27:17+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -1847,12 +1781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "249a31f94a62ac1f12926cd8d6dd37f22cc695cd"
+                "reference": "87bd8a44eadf28fc04d668f5e1875ddfe798bf6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/249a31f94a62ac1f12926cd8d6dd37f22cc695cd",
-                "reference": "249a31f94a62ac1f12926cd8d6dd37f22cc695cd",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/87bd8a44eadf28fc04d668f5e1875ddfe798bf6e",
+                "reference": "87bd8a44eadf28fc04d668f5e1875ddfe798bf6e",
                 "shasum": ""
             },
             "require": {
@@ -1903,7 +1837,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-05T16:38:08+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2010,12 +1944,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "7adc5237c7222c920a55ec46cb278caf3980b8ba"
+                "reference": "670df540cb2e4f1a5c37fca1bb9b395b5c88df33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/7adc5237c7222c920a55ec46cb278caf3980b8ba",
-                "reference": "7adc5237c7222c920a55ec46cb278caf3980b8ba",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/670df540cb2e4f1a5c37fca1bb9b395b5c88df33",
+                "reference": "670df540cb2e4f1a5c37fca1bb9b395b5c88df33",
                 "shasum": ""
             },
             "require": {
@@ -2050,7 +1984,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2018-12-25T09:56:50+00:00"
+            "time": "2019-01-06T17:06:34+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -2058,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "e6f9f5814090cdddfadf439c5bfac9b96fc54e49"
+                "reference": "ef6f382c29b488e131ea7aa49de8fcaca0c76c7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/e6f9f5814090cdddfadf439c5bfac9b96fc54e49",
-                "reference": "e6f9f5814090cdddfadf439c5bfac9b96fc54e49",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/ef6f382c29b488e131ea7aa49de8fcaca0c76c7b",
+                "reference": "ef6f382c29b488e131ea7aa49de8fcaca0c76c7b",
                 "shasum": ""
             },
             "require": {
@@ -2169,7 +2103,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-05T16:38:08+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2177,12 +2111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "961b3fee5e04937951fb3be08787400fbffc81fa"
+                "reference": "b6d6be8a6e8dc665df1bb33ff31aa75e04280b36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/961b3fee5e04937951fb3be08787400fbffc81fa",
-                "reference": "961b3fee5e04937951fb3be08787400fbffc81fa",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/b6d6be8a6e8dc665df1bb33ff31aa75e04280b36",
+                "reference": "b6d6be8a6e8dc665df1bb33ff31aa75e04280b36",
                 "shasum": ""
             },
             "require": {
@@ -2223,7 +2157,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-05T16:38:08+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -2231,12 +2165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "4a152a6750de62143e827536c3d50421cdb21cd6"
+                "reference": "b77ea3304c9379f94b44ec8dad9d2f6195418517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/4a152a6750de62143e827536c3d50421cdb21cd6",
-                "reference": "4a152a6750de62143e827536c3d50421cdb21cd6",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/b77ea3304c9379f94b44ec8dad9d2f6195418517",
+                "reference": "b77ea3304c9379f94b44ec8dad9d2f6195418517",
                 "shasum": ""
             },
             "require": {
@@ -2312,7 +2246,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-06T16:31:10+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -2559,12 +2493,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "6fbea3dfea79321b93be2d383ca86aeef43e5aec"
+                "reference": "21cd163307abfdfaf764ba2b9e34e359d898910b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/6fbea3dfea79321b93be2d383ca86aeef43e5aec",
-                "reference": "6fbea3dfea79321b93be2d383ca86aeef43e5aec",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/21cd163307abfdfaf764ba2b9e34e359d898910b",
+                "reference": "21cd163307abfdfaf764ba2b9e34e359d898910b",
                 "shasum": ""
             },
             "require": {
@@ -2618,7 +2552,7 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2019-01-03T09:16:58+00:00"
+            "time": "2019-01-05T16:38:08+00:00"
         },
         {
             "name": "symfony/routing",
@@ -2902,14 +2836,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "symfony/flex": 20,
-        "aa/akeneo-import": 20,
-        "aa/akeneo-fake-product-provider": 20,
-        "aa/akeneo-import-api-command-handler": 20,
-        "symfony/framework-bundle": 20,
-        "symfony/console": 20,
-        "symfony/dotenv": 20,
-        "symfony/yaml": 20,
-        "akeneo/api-php-client": 20
+        "aa/akeneo-import": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

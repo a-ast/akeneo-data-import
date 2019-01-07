@@ -2,8 +2,8 @@ services:
 
     ### API batch handler
 
-    Aa\AkeneoImport\CommandHandler\ApiBatchHandler:
-        factory: 'Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:createHandler'
+    Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler:
+        factory: 'Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandlerFactory:createHandler'
 
     Akeneo\Pim\ApiClient\AkeneoPimClientBuilder:
         arguments:
@@ -17,7 +17,7 @@ services:
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
 
-    Aa\AkeneoImport\CommandHandler\ApiBatchHandlerFactory:
+    Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandlerFactory:
         arguments:
             - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
 
@@ -34,7 +34,7 @@ services:
     Aa\AkeneoImport\CommandBus\Transport\Receiver:
         factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createReceiver'
 
-    Aa\AkeneoImport\CommandHandler\AsyncCommandBatchHandler:
+    Aa\AkeneoImport\CommandHandler\Amqp\AsyncCommandBatchHandler:
         arguments:
           - '@Aa\AkeneoImport\CommandBus\Transport\Sender'
 
@@ -60,15 +60,15 @@ services:
                 media: '@App\Example\ProductWithMediaProvider'
                 query: '@App\Example\QueryAndCommandProvider'
             -
-                api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
-                amqp: '@Aa\AkeneoImport\CommandHandler\AsyncCommandBatchHandler'
+                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler'
+                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AsyncCommandBatchHandler'
         tags: ['console.command']
 
     App\Command\ConsumeCommand:
         arguments:
             - '@Aa\AkeneoImport\CommandBus\Consumer'
             -
-                api: '@Aa\AkeneoImport\CommandHandler\ApiBatchHandler'
+                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler'
             -
                 product: 'Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct'
                 model: 'Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel'

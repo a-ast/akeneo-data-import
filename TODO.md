@@ -1,6 +1,9 @@
 # TODO
 
 ## Important
+1. Architecture: change Provider to Traversable in Importer!
+1. Merge ApiBatch handler to akeneo-import
+1. Implement builders as in examples (specs?)
 1. Test tool after api handler refactoring.
 
 ## Next steps
