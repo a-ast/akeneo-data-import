@@ -1,10 +1,5 @@
 services:
 
-    ### API batch handler
-
-    Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler:
-        factory: 'Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandlerFactory:createHandler'
-
     Akeneo\Pim\ApiClient\AkeneoPimClientBuilder:
         arguments:
             - '%env(AKENEO_API_HOST)%'
@@ -17,36 +12,39 @@ services:
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
 
-    Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandlerFactory:
+    ### API command handler
+    Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory:
+
+    Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler:
+        factory: 'Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory:createByApiClient'
         arguments:
             - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
 
-
     ## Akeneo Import
 
-    Aa\AkeneoImport\CommandBus\Transport\TransportFactory:
+    Aa\AkeneoImport\Transport\TransportFactory:
         arguments:
           - '%env(ENQUEUE_DSN)%'
 
-    Aa\AkeneoImport\CommandBus\Transport\Sender:
-        factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createSender'
+    Aa\AkeneoImport\Transport\Receiver:
+        factory: 'Aa\AkeneoImport\Transport\TransportFactory:createReceiver'
 
-    Aa\AkeneoImport\CommandBus\Transport\Receiver:
-        factory: 'Aa\AkeneoImport\CommandBus\Transport\TransportFactory:createReceiver'
+    Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandlerFactory:
 
-    Aa\AkeneoImport\CommandHandler\Amqp\AsyncCommandBatchHandler:
+    Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler:
+        factory: 'Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandlerFactory:createByDsn'
         arguments:
-          - '@Aa\AkeneoImport\CommandBus\Transport\Sender'
+          - '%env(ENQUEUE_DSN)%'
 
-    Aa\AkeneoImport\CommandBus\CommandBusFactory:
+
+    Aa\AkeneoImport\Import\ImporterFactory:
 
     Aa\AkeneoImport\Import\Importer:
-        arguments:
-            - '@Aa\AkeneoImport\CommandBus\CommandBusFactory'
+        factory: 'Aa\AkeneoImport\Import\ImporterFactory:create'
 
     Aa\AkeneoImport\CommandBus\Consumer:
         arguments:
-            - '@Aa\AkeneoImport\CommandBus\Transport\Receiver'
+            - '@Aa\AkeneoImport\Transport\Receiver'
 
     ## App
 
@@ -58,17 +56,17 @@ services:
                 product_and_model: '@App\Example\TestProductAndModelProvider'
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
-                query: '@App\Example\QueryAndCommandProvider'
+#                query: '@App\Example\QueryAndCommandProvider'
             -
-                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler'
-                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AsyncCommandBatchHandler'
+                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
+                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler'
         tags: ['console.command']
 
     App\Command\ConsumeCommand:
         arguments:
             - '@Aa\AkeneoImport\CommandBus\Consumer'
             -
-                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiBatchHandler'
+                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
             -
                 product: 'Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct'
                 model: 'Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel'

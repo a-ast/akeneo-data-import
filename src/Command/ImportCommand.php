@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Aa\AkeneoImport\CommandHandler\ResponseValidator\Exception\ValidationException;
+use Aa\AkeneoImport\CommandHandler\Api\ResponseValidator\Exception\ValidationException;
 use Aa\AkeneoImport\Import\Importer;
 use Aa\AkeneoImport\ImportCommand\Exception\CommandHandlerException;
 use Symfony\Component\Console\Command\Command;
@@ -20,7 +20,7 @@ class ImportCommand extends Command
     private $importer;
 
     /**
-     * @var array
+     * @var \Aa\AkeneoImport\ImportCommand\CommandProviderInterface[]
      */
     private $providers;
 
