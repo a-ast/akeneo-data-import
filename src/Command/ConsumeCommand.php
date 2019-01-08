@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Aa\AkeneoImport\CommandBus\Consumer;
+use Aa\AkeneoImport\Transport\Consumer;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

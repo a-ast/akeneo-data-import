@@ -22,13 +22,6 @@ services:
 
     ## Akeneo Import
 
-    Aa\AkeneoImport\Transport\TransportFactory:
-        arguments:
-          - '%env(ENQUEUE_DSN)%'
-
-    Aa\AkeneoImport\Transport\Receiver:
-        factory: 'Aa\AkeneoImport\Transport\TransportFactory:createReceiver'
-
     Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandlerFactory:
 
     Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler:
@@ -36,17 +29,24 @@ services:
         arguments:
           - '%env(ENQUEUE_DSN)%'
 
-
     Aa\AkeneoImport\Import\ImporterFactory:
 
     Aa\AkeneoImport\Import\Importer:
         factory: 'Aa\AkeneoImport\Import\ImporterFactory:create'
 
-    Aa\AkeneoImport\CommandBus\Consumer:
+    Aa\AkeneoImport\Transport\ConsumerFactory:
+
+    Aa\AkeneoImport\Transport\Consumer:
+        factory: 'Aa\AkeneoImport\Transport\ConsumerFactory:createByDsn'
         arguments:
-            - '@Aa\AkeneoImport\Transport\Receiver'
+          - '%env(ENQUEUE_DSN)%'
 
     ## App
+
+    app.example.cqs:
+        class: App\Example\QueryAndCommandProvider
+        arguments:
+            - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
 
     App\Command\ImportCommand:
         arguments:
@@ -56,7 +56,7 @@ services:
                 product_and_model: '@App\Example\TestProductAndModelProvider'
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
-#                query: '@App\Example\QueryAndCommandProvider'
+                query: '@app.example.cqs'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
                 amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler'
@@ -64,7 +64,7 @@ services:
 
     App\Command\ConsumeCommand:
         arguments:
-            - '@Aa\AkeneoImport\CommandBus\Consumer'
+            - '@Aa\AkeneoImport\Transport\Consumer'
             -
                 api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
             -

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/a-ast/akeneo-import.git",
-                "reference": "522cfe5f11846d9033593dbe6e32ef058eb70a42"
+                "reference": "2c2c86834231cb7360866fc4daa6f302fc820ef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/522cfe5f11846d9033593dbe6e32ef058eb70a42",
-                "reference": "522cfe5f11846d9033593dbe6e32ef058eb70a42",
+                "url": "https://api.github.com/repos/a-ast/akeneo-import/zipball/2c2c86834231cb7360866fc4daa6f302fc820ef5",
+                "reference": "2c2c86834231cb7360866fc4daa6f302fc820ef5",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 }
             ],
             "description": "Library for product import to Akeneo PIM",
-            "time": "2019-01-08T15:54:31+00:00"
+            "time": "2019-01-08T17:20:39+00:00"
         },
         {
             "name": "aa/akeneo-import-commands",
