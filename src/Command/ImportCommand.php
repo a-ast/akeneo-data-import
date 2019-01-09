@@ -56,7 +56,7 @@ class ImportCommand extends Command
         $handler = $this->handlers[$input->getArgument('handler-alias')];
 
         try {
-            $this->importer->import($provider, $handler);
+            $this->importer->import($provider->getCommands(), $handler);
         } catch (CommandHandlerException $e) {
 
             $style = new SymfonyStyle($input, $output);
