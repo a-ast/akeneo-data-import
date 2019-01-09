@@ -25,7 +25,7 @@ class ImportCommand extends Command
     private $providers;
 
     /**
-     * @var \Aa\AkeneoImport\ImportCommand\CommandBatchHandlerInterface[]
+     * @var \Aa\AkeneoImport\ImportCommand\CommandHandlerInterface[]
      */
     private $handlers;
 
