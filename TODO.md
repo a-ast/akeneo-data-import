@@ -1,10 +1,10 @@
 # TODO
 
 ## Important
-1. Architecture: change Provider to Traversable in Importer!
-1. Implement builders as in examples (specs?)
+1. Commands mucst contain getters and no magic!
 1. Test tool after api handler refactoring.
-
+1. Integration tests - behat?
+1. Install Php cs
 
 ## All
 1. With own bus: generate import id and pass it to handlers, identify every batch (command list) for logging, recovering
@@ -19,7 +19,6 @@
 1.
 
 ## Akeneo Import
-1. Move transport and consumer out of CommandBus.
 1. Implement own simple command bus (pros/cons analysis).
 1. Create bundle?
     1. With the consume command that shows proper progress and statuses (requeue etc)
@@ -36,5 +35,10 @@
 
 ## Akeneo Api Command Handler
 
-1. Extensive logging of failed requests (with import id)
+1. (!) Extensive logging of failed requests (with import id)
 
+
+## What needs to be done for real use / for demo
+
+1. Logging
+2. Testing on DO: akeneo / rabbit mq / import tool  
