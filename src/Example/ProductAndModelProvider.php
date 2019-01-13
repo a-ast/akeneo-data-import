@@ -8,7 +8,7 @@ use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
 use Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel;
 use Traversable;
 
-class TestProductAndModelProvider implements CommandProviderInterface
+class ProductAndModelProvider implements CommandProviderInterface
 {
     /**
      * @return Traversable|CommandInterface[]
