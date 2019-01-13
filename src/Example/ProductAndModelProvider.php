@@ -6,14 +6,14 @@ use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
 use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
 use Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel;
-use Traversable;
+
 
 class ProductAndModelProvider implements CommandProviderInterface
 {
     /**
-     * @return Traversable|CommandInterface[]
+     * @return CommandInterface[]
      */
-    public function getCommands(): Traversable
+    public function getCommands(): iterable
     {
         for ($i = 0; $i < 10; $i++) {
 

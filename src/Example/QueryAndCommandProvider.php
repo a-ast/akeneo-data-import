@@ -7,7 +7,7 @@ use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
 use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
 use Akeneo\Pim\ApiClient\AkeneoPimClientInterface;
 use Akeneo\Pim\ApiClient\Search\SearchBuilder;
-use Traversable;
+
 
 class QueryAndCommandProvider implements CommandProviderInterface
 {
@@ -22,9 +22,9 @@ class QueryAndCommandProvider implements CommandProviderInterface
     }
 
     /**
-     * @return Traversable|CommandInterface[]
+     * @return CommandInterface[]
      */
-    public function getCommands(): Traversable
+    public function getCommands(): iterable
     {
         $searchBuilder = new SearchBuilder();
         $searchBuilder->addFilter('name', 'CONTAINS', 'test');

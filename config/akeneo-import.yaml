@@ -53,6 +53,7 @@ services:
             - '@Aa\AkeneoImport\Import\Importer'
             -
                 product: '@App\Example\ProductProvider'
+                delete_product: '@App\Example\DeleteProvider'
                 product_and_model: '@App\Example\ProductAndModelProvider'
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'

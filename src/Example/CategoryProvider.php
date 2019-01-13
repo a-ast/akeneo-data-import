@@ -5,15 +5,13 @@ namespace App\Example;
 use Aa\AkeneoImport\ImportCommand\Category\UpdateOrCreateCategory;
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
-use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
-use Traversable;
 
 class CategoryProvider implements CommandProviderInterface
 {
     /**
-     * @return Traversable|CommandInterface[]
+     * @return CommandInterface[]
      */
-    public function getCommands(): Traversable
+    public function getCommands(): iterable
     {
         $categoryCodes = ['c1', 'c2', 'c3'];
 

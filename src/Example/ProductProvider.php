@@ -5,14 +5,14 @@ namespace App\Example;
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
 use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
-use Traversable;
+
 
 class ProductProvider implements CommandProviderInterface
 {
     /**
-     * @return Traversable|CommandInterface[]
+     * @return CommandInterface[]
      */
-    public function getCommands(): Traversable
+    public function getCommands(): iterable
     {
         for ($i = 1; $i <= 10; $i++) {
 
