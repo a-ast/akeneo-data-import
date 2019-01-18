@@ -1,15 +1,17 @@
 # TODO
 
+## New generation
+1. CommandBus that allows broadcating FinishImport
+1. WOOOOOOW: how to Implement sync mode in Upsertable????
+    Solution: one adaper for all upserables with accumulators (batches) for every command class
+1. Accumulation of commands
+
+1. Rework Amqp (or async handler)
+
+
 ## Important
-1. Commands must contain getters and no magic! 
-    1.1 Get rid of arrayformattable and base command
-    1.1 Introduce changed attributes array - some magic for filling changed?
-    1.1. (Ugly?) Alternative: default value '<UNSET>' -> serialize only if it is not this value
-1. Test tool after api handler refactoring.
 1. Integration tests - behat?
 1. Install Php cs
-
-## All
 1. With own bus: generate import id and pass it to handlers, identify every batch (command list) for logging, recovering
 1. Remove all @todos
 1. Test both ways of product update - direct API and via rabbitMQ, test failure scenarios

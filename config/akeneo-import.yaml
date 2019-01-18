@@ -58,9 +58,11 @@ services:
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
                 query: '@app.example.cqs'
-            -
-                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
-                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler'
+            - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
+            - '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory'
+#            -
+#                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
+#                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler'
         tags: ['console.command']
 
     App\Command\ConsumeCommand:

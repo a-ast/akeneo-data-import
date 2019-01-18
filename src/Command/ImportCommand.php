@@ -2,9 +2,12 @@
 
 namespace App\Command;
 
+use Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory;
 use Aa\AkeneoImport\CommandHandler\Api\ResponseValidator\Exception\ValidationException;
 use Aa\AkeneoImport\Import\Importer;
 use Aa\AkeneoImport\ImportCommand\Exception\CommandHandlerException;
+use Akeneo\Pim\ApiClient\AkeneoPimClient;
+use Akeneo\Pim\ApiClient\AkeneoPimClientInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -29,15 +32,28 @@ class ImportCommand extends Command
      */
     private $handlers;
 
+    /**
+     * @var \Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory
+     */
+    private $factory;
+
+    /**
+     * @var \Akeneo\Pim\ApiClient\AkeneoPimClientInterface
+     */
+    private $client;
+
     public function __construct(Importer $importer,
         array $providers,
-        array $handlers
+
+        AkeneoPimClientInterface $client,
+        ApiCommandHandlerFactory $factory
     ) {
         parent::__construct();
 
         $this->importer = $importer;
         $this->providers = $providers;
-        $this->handlers = $handlers;
+        $this->factory = $factory;
+        $this->client = $client;
     }
 
     protected function configure()
@@ -46,17 +62,20 @@ class ImportCommand extends Command
             ->setName('aa:akeneo-import:import')
             ->setDescription('Import pim data using given provider and import handler.')
             ->addArgument('provider-alias', InputArgument::REQUIRED, 'Alias of a command data provider.')
-            ->addArgument('handler-alias', InputArgument::REQUIRED, 'Alias of a command list handler.')
+//            ->addArgument('handler-alias', InputArgument::REQUIRED, 'Alias of a command list handler.')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $provider = $this->providers[$input->getArgument('provider-alias')];
-        $handler = $this->handlers[$input->getArgument('handler-alias')];
+//        $handler = $this->handlers[$input->getArgument('handler-alias')];
+
+
+        $handlers = $this->factory->createByApiClient($this->client);
 
         try {
-            $this->importer->import($provider->getCommands(), $handler);
+            $this->importer->import($provider->getCommands(), $handlers);
         } catch (CommandHandlerException $e) {
 
             $style = new SymfonyStyle($input, $output);

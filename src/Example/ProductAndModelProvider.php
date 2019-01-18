@@ -5,6 +5,7 @@ namespace App\Example;
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
 use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
+use Aa\AkeneoImport\ImportCommand\ProductModel\ProductModelCommandBuilder;
 use Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel;
 
 
@@ -19,14 +20,14 @@ class ProductAndModelProvider implements CommandProviderInterface
 
             $modelCode = sprintf('product-model-%s', $i);
 
-            $model = new UpdateOrCreateProductModel($modelCode);
+            $model = new ProductModelCommandBuilder($modelCode);
             $model
-                ->setFamilyVariant('clothing_size')
+                // ->setFamilyVariant('clothing_size')
                 ->addValue('name', sprintf('Product model %d', $i))
                 ->addValue('color', 'green')
             ;
 
-            yield $model;
+            yield from $model->getCommands();
 
             $axes = ['s', 'm', 'l', 'xl', 'xxl'];
 
@@ -34,16 +35,16 @@ class ProductAndModelProvider implements CommandProviderInterface
 
                 $identifier = sprintf('product-%s-%s', $modelCode, $axis);
 
-                $product = new UpdateOrCreateProduct($identifier);
+//                $product = new UpdateOrCreateProduct($identifier);
+//
+//                $product
+//                    ->setFamily('clothing')
+//                    ->setParent($modelCode)
+//                    ->setEnabled(true)
+//                    ->addValue('size', $axis)
+//                ;
 
-                $product
-                    ->setFamily('clothing')
-                    ->setParent($modelCode)
-                    ->setEnabled(true)
-                    ->addValue('size', $axis)
-                ;
-
-                yield $product;
+                // yield $product;
             }
         }
     }
