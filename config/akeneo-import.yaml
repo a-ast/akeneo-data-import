@@ -12,32 +12,16 @@ services:
             - '%env(AKENEO_API_USER)%'
             - '%env(AKENEO_API_PASSWORD)%'
 
-    ### API command handler
-    Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory:
+    ## Akeneo Import
 
-    Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler:
-        factory: 'Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory:createByApiClient'
+    Aa\AkeneoImport\Import\ApiImporterFactory:
+
+    Aa\AkeneoImport\Import\Importer:
+        factory: 'Aa\AkeneoImport\Import\ApiImporterFactory:createByApiClient'
         arguments:
             - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
 
-    ## Akeneo Import
-
-    Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandlerFactory:
-
-    Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler:
-        factory: 'Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandlerFactory:createByDsn'
-        arguments:
-          - '%env(ENQUEUE_DSN)%'
-
-    Aa\AkeneoImport\Import\ImporterFactory:
-
-    Aa\AkeneoImport\Import\Importer:
-        factory: 'Aa\AkeneoImport\Import\ImporterFactory:create'
-
-    Aa\AkeneoImport\Transport\ConsumerFactory:
-
-    Aa\AkeneoImport\Transport\Consumer:
-        factory: 'Aa\AkeneoImport\Transport\ConsumerFactory:createByDsn'
+    Aa\AkeneoImport\Queue\RemoteQueueFactory:
         arguments:
           - '%env(ENQUEUE_DSN)%'
 
@@ -58,19 +42,23 @@ services:
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
                 query: '@app.example.cqs'
-            - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
-            - '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandlerFactory'
-#            -
-#                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
-#                amqp: '@Aa\AkeneoImport\CommandHandler\Amqp\AmqpCommandHandler'
+
+        tags: ['console.command']
+
+    App\Command\PublishCommand:
+        arguments:
+            - '@Aa\AkeneoImport\Queue\RemoteQueueFactory'
+            -
+                product: '@App\Example\ProductProvider'
+                delete_product: '@App\Example\DeleteProvider'
+                product_and_model: '@App\Example\ProductAndModelProvider'
+                category: '@App\Example\CategoryProvider'
+                media: '@App\Example\ProductWithMediaProvider'
+                query: '@app.example.cqs'
         tags: ['console.command']
 
     App\Command\ConsumeCommand:
         arguments:
-            - '@Aa\AkeneoImport\Transport\Consumer'
-            -
-                api: '@Aa\AkeneoImport\CommandHandler\Api\ApiCommandHandler'
-            -
-                product: 'Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct'
-                model: 'Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel'
+            - '@Aa\AkeneoImport\Queue\RemoteQueueFactory'
+            - '@Aa\AkeneoImport\Import\Importer'
         tags: ['console.command']
