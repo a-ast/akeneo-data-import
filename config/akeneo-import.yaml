@@ -42,6 +42,7 @@ services:
                 category: '@App\Example\CategoryProvider'
                 media: '@App\Example\ProductWithMediaProvider'
                 query: '@app.example.cqs'
+                2level_model: '@App\Example\TwoLevelModelProvider'
 
         tags: ['console.command']
 

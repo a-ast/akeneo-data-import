@@ -4,7 +4,7 @@ namespace App\Example;
 
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
-use Aa\AkeneoImport\ImportCommand\Product\DeleteProduct;
+use Aa\AkeneoImport\ImportCommand\Product\Delete;
 
 
 class DeleteProvider implements CommandProviderInterface
@@ -14,11 +14,14 @@ class DeleteProvider implements CommandProviderInterface
      */
     public function getCommands(): iterable
     {
-        for ($i = 1; $i <= 10; $i++) {
+        yield new Delete('bla-1');
+        yield new Delete('bla-2');
 
-            $identifier = sprintf('test-%d', $i);
-
-            yield new DeleteProduct($identifier);
-        }
+        //        for ($i = 1; $i <= 10; $i++) {
+//
+//            $identifier = sprintf('test-%d', $i);
+//
+//            yield new Delete($identifier);
+//        }
     }
 }

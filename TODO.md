@@ -1,6 +1,62 @@
 # TODO
 
-## New generation
+## New II generation
+
+
+New Classes
+
+
+Command Provider -> Publisher (amqp/in memory) -> Consumer() -> Importer(form Queue)
+
+
+Sync mode
+
+SyncApiImporter supports internal in-memory queue 
+for command republishing (InMemoryPublisher / InMemoryQueue / InMemoryConsumer or QueueReader).
+Can be implemented as a decorator for AsyncApiImporter.
+
+AsyncApiImporter doesn't support any queueing mechanism.
+Reads, accumulates and sends commands to Akeneo API.
+
+```
+$importer = (new ApiImporterFactory())->createByCredentials(...api credentials);
+$importer->import($commands);
+```
+
+Async mode
+
+Publisher
+AmqpPublisher publishes commands to MQ.
+
+```
+$publisher = new AmqpPublisher(...dsn)
+$publisher->publish($commands);
+```
+
+Consumer
+
+AmqpConsumer reads commands from MQ. 
+
+```
+$queue = new AmqpQueue(...dsn);
+
+$importer = new AmqpApiImporter(...api credentials);
+$importer->import($queue);
+```
+
+
+Problem
+
+1. Generic command accumulation (e.g. for FileGenerator) - 
+   or just ignore it assuming that for huge volumes one should use MQ/API?
+2. FinishImport flag for golang consumer.
+
+
+
+??? how to connect to Importer?
+
+
+
 1. CommandBus that allows broadcating FinishImport
 1. WOOOOOOW: how to Implement sync mode in Upsertable????
     Solution: one adaper for all upserables with accumulators (batches) for every command class
