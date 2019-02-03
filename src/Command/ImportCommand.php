@@ -41,13 +41,21 @@ class ImportCommand extends Command
         $this
             ->setName('aa:akeneo-import:import')
             ->setDescription('Import pim data using given provider and import handler.')
-            ->addArgument('provider-alias', InputArgument::REQUIRED, 'Alias of a command data provider.')
+            ->addArgument('provider-alias', InputArgument::REQUIRED, 'Alias of a command data provider')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $provider = $this->providers[$input->getArgument('provider-alias')];
+        $providerAlias = $input->getArgument('provider-alias');
+
+        if (!isset($this->providers[$providerAlias])) {
+            $providerAliases = implode(PHP_EOL, array_keys($this->providers));
+
+            throw new \InvalidArgumentException(sprintf("Available aliases:\n%s", $providerAliases));
+        }
+
+        $provider = $this->providers[$providerAlias];
 
         $this->importer->import($provider->getCommands());
     }
