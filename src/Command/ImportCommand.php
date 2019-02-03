@@ -49,22 +49,6 @@ class ImportCommand extends Command
     {
         $provider = $this->providers[$input->getArgument('provider-alias')];
 
-        try {
-            $this->importer->import($provider->getCommands());
-        } catch (CommandHandlerException $e) {
-
-            $style = new SymfonyStyle($input, $output);
-
-            $style->error(sprintf('Failed by import: %s', $e->getMessage()));
-
-            $previous = $e->getPrevious();
-            if ($previous instanceof ValidationException) {
-                foreach ($previous->getResponse()->getErrors() as $error) {
-                    foreach ($error as $key => $value) {
-                        $output->writeln(sprintf('%s: %s', $key, $value));
-                    }
-                }
-            }
-        }
+        $this->importer->import($provider->getCommands());
     }
 }

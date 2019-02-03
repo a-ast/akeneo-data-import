@@ -21,9 +21,7 @@ services:
         arguments:
             - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
 
-    Aa\AkeneoImport\Queue\RemoteQueueFactory:
-        arguments:
-          - '%env(ENQUEUE_DSN)%'
+    Aa\AkeneoImport\Queue\QueueFactory:
 
     ## App
 
@@ -48,7 +46,8 @@ services:
 
     App\Command\PublishCommand:
         arguments:
-            - '@Aa\AkeneoImport\Queue\RemoteQueueFactory'
+            - '%env(ENQUEUE_DSN)%'
+            - '@Aa\AkeneoImport\Queue\QueueFactory'
             -
                 product: '@App\Example\ProductProvider'
                 delete_product: '@App\Example\DeleteProvider'
@@ -60,6 +59,7 @@ services:
 
     App\Command\ConsumeCommand:
         arguments:
-            - '@Aa\AkeneoImport\Queue\RemoteQueueFactory'
+            - '%env(ENQUEUE_DSN)%'
+            - '@Aa\AkeneoImport\Queue\QueueFactory'
             - '@Aa\AkeneoImport\Import\Importer'
         tags: ['console.command']

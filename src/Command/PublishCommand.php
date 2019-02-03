@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Aa\AkeneoImport\Queue\RemoteQueueFactory;
+use Aa\AkeneoImport\Queue\QueueFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -12,7 +12,7 @@ class PublishCommand extends Command
 {
 
     /**
-     * @var \Aa\AkeneoImport\Queue\RemoteQueueFactory
+     * @var QueueFactory
      */
     private $queueFactory;
 
@@ -21,10 +21,16 @@ class PublishCommand extends Command
      */
     private $providers;
 
-    public function __construct(RemoteQueueFactory $queueFactory, array $providers)
+    /**
+     * @var string
+     */
+    private $dsn;
+
+    public function __construct(string $dsn, QueueFactory $queueFactory, array $providers)
     {
         parent::__construct();
 
+        $this->dsn = $dsn;
         $this->queueFactory = $queueFactory;
         $this->providers = $providers;
     }
@@ -42,7 +48,7 @@ class PublishCommand extends Command
     {
         $provider = $this->providers[$input->getArgument('provider-alias')];
 
-        $queue = $this->queueFactory->create('messages');
+        $queue = $this->queueFactory->createByDsn($this->dsn, 'messages');
 
         foreach ($provider->getCommands() as $command) {
             $queue->enqueue($command);
