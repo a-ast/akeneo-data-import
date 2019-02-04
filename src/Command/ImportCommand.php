@@ -39,7 +39,7 @@ class ImportCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('aa:akeneo-import:import')
+            ->setName('akeneo-import:import')
             ->setDescription('Import pim data using given provider and import handler.')
             ->addArgument('provider-alias', InputArgument::REQUIRED, 'Alias of a command data provider')
         ;

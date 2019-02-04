@@ -38,7 +38,7 @@ class ConsumeCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('aa:akeneo-import:consume')
+            ->setName('akeneo-import:consume')
             ->setDescription('Consume pim data from the queue')
             ->addArgument('queue-name', InputArgument::REQUIRED, 'Queue name.')
         ;

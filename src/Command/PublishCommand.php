@@ -38,7 +38,7 @@ class PublishCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('aa:akeneo-import:publish')
+            ->setName('akeneo-import:publish')
             ->setDescription('Publish pim data to a queue')
             ->addArgument('provider-alias', InputArgument::REQUIRED, 'Alias of a command data provider.')
         ;
