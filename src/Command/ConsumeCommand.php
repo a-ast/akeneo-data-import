@@ -3,6 +3,7 @@
 namespace App\Command;
 
 use Aa\AkeneoImport\Import\ImporterInterface;
+use Aa\AkeneoImport\ImportCommand\Exception\CommandHandlerException;
 use Aa\AkeneoImport\Queue\QueueFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -49,6 +50,19 @@ class ConsumeCommand extends Command
         $queueName = $input->getArgument('queue-name');
         $queue = $this->queueFactory->createByDsn($this->dsn, $queueName);
 
-        $this->importer->importQueue($queue);
+        try {
+            $this->importer->importQueue($queue);
+        } catch (CommandHandlerException $e) {
+
+            $output->writeln($e->getMessage());
+
+            if (count($e->getErrors()) > 0) {
+                foreach ($e->getErrors() as $error) {
+                    $output->writeln($error);
+                }
+
+            }
+
+        }
     }
 }
