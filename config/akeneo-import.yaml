@@ -20,6 +20,10 @@ services:
         factory: 'Aa\AkeneoImport\Import\ApiImporterFactory:createByApiClient'
         arguments:
             - '@Akeneo\Pim\ApiClient\AkeneoPimClient'
+        calls:
+            - method: setLogger
+              arguments:
+                  - '@logger'
 
     Aa\AkeneoImport\Queue\QueueFactory:
 

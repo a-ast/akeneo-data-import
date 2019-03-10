@@ -44,6 +44,9 @@
     "guzzlehttp/psr7": {
         "version": "1.5-dev"
     },
+    "monolog/monolog": {
+        "version": "1.x-dev"
+    },
     "php-http/discovery": {
         "version": "1.5-dev"
     },
@@ -154,6 +157,18 @@
     },
     "symfony/mime": {
         "version": "4.3-dev"
+    },
+    "symfony/monolog-bridge": {
+        "version": "4.3-dev"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "18ebf5a940573a20de06f9c4060101eeb438cf3d"
+        }
     },
     "symfony/polyfill-ctype": {
         "version": "v1.10.0"
