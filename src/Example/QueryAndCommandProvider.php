@@ -4,7 +4,7 @@ namespace App\Example;
 
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
-use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
+use Aa\AkeneoImport\ImportCommand\Product;
 use Akeneo\Pim\ApiClient\AkeneoPimClientInterface;
 use Akeneo\Pim\ApiClient\Search\SearchBuilder;
 
@@ -32,7 +32,8 @@ class QueryAndCommandProvider implements CommandProviderInterface
         $products = $this->client->getProductApi()->all(100, ['search' => $searchBuilder->getFilters()]);
 
         foreach ($products as $productData) {
-            yield (new UpdateOrCreateProduct($productData['identifier']))->setEnabled(false);
+            yield (new Product\SetEnabled($productData['identifier'], false));
+//            yield (new Product\Delete($productData['identifier']));
         }
     }
 }

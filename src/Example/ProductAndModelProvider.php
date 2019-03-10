@@ -5,9 +5,7 @@ namespace App\Example;
 use Aa\AkeneoImport\ImportCommand\CommandInterface;
 use Aa\AkeneoImport\ImportCommand\CommandProviderInterface;
 use Aa\AkeneoImport\ImportCommand\Product\ProductCommandBuilder;
-use Aa\AkeneoImport\ImportCommand\Product\UpdateOrCreateProduct;
 use Aa\AkeneoImport\ImportCommand\ProductModel\ProductModelCommandBuilder;
-use Aa\AkeneoImport\ImportCommand\ProductModel\UpdateOrCreateProductModel;
 
 
 class ProductAndModelProvider implements CommandProviderInterface
@@ -17,9 +15,9 @@ class ProductAndModelProvider implements CommandProviderInterface
      */
     public function getCommands(): iterable
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
 
-            $modelCode = sprintf('product-model-%s', $i);
+            $modelCode = sprintf('test-product-model-%s', $i);
 
             $model = new ProductModelCommandBuilder($modelCode);
             $model
@@ -34,7 +32,7 @@ class ProductAndModelProvider implements CommandProviderInterface
 
             foreach ($axes as $axis) {
 
-                $identifier = sprintf('product-%s-%s', $modelCode, $axis);
+                $identifier = sprintf('test-product-%d-%s', $i, $axis);
 
                 $product = new ProductCommandBuilder($identifier);
 
@@ -45,7 +43,7 @@ class ProductAndModelProvider implements CommandProviderInterface
                     ->addValue('size', $axis)
                 ;
 
-                 yield from $product->getCommands();
+                yield from $product->getCommands();
             }
         }
     }
