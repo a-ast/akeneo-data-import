@@ -1,4 +1,7 @@
-# Akeneo Data Import (in progress)
+# Akeneo Data Import (DEPRECATED)
+
+**DEPRECATED** Please consider using [Akeneo Data Loader](https://github.com/a-ast/akeneo-data-loader)
+
 
 Application for data import to Akeneo PIM.
 
